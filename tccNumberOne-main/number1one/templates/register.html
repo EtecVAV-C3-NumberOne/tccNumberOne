@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/register/style.css" />
+    <title>Cadastro - NumberOne</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-visual">
+        <div class="visual-content">
+          <div class="math-icons">
+            <div class="math-icon">∑</div>
+            <div class="math-icon">∫</div>
+            <div class="math-icon">√</div>
+            <div class="math-icon">π</div>
+            <div class="math-icon">∞</div>
+            <div class="math-icon">∆</div>
+          </div>
+          <h2 class="visual-title">Junte-se ao NumberOne</h2>
+          <p class="visual-subtitle">
+            Comece sua jornada matemática hoje e transforme números em
+            conhecimento real
+          </p>
+        </div>
+      </div>
+
+      <div class="register-form-section">
+        <a href="/" class="logo">NumberOne</a>
+
+        <div class="form-header">
+          <h1 class="form-title">Crie sua conta</h1>
+          <p class="form-subtitle">Preencha os dados abaixo para começar</p>
+        </div>
+
+        <form method="post" class="register-form" id="registerForm">
+          {{ form.csrf_token }}
+          <div class="input-group">
+            <label class="input-label" for="name"
+              >{{ form.username.label() }}</label
+            >
+            {{ form.username(class="input-field", placeholder="Digite um nome de usuário") }}
+            {% for error in form.username.errors %}
+            <div class="field-feedback" id="name-feedback">{{ error }}</div>
+            {% endfor %}
+            
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="email"
+              >{{ form.email.label() }}</label
+            >
+            {{ form.email( class="input-field", placeholder="seu@email.com", )
+            }} {% for error in form.email.errors %}
+            <div class="field-feedback" id="email-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="password"
+              >{{ form.password.label() }}</label
+            >
+            <div style="position: relative">
+              {{ form.password(id="password", class="input-field",
+              placeholder="Crie uma senha") }}
+              <button
+                type="button"
+                class="password-toggle"
+                onclick="togglePassword('password')"
+              >
+                👁️
+              </button>
+            </div>
+            <div
+              class="password-strength"
+              id="password-strength"
+              style="display: none"
+            >
+              <div class="strength-bar">
+                <div class="strength-fill" id="strength-fill"></div>
+              </div>
+              <div class="strength-text" id="strength-text"></div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="confirmPassword"
+              >{{ form.confirm_password.label() }}</label
+            >
+            <div style="position: relative">
+              {{ form.confirm_password(id="confirmPassword",
+              class="input-field", placeholder="Digite a senha novamente") }}
+              <button
+                type="button"
+                class="password-toggle"
+                onclick="togglePassword('confirmPassword')"
+              >
+                👁️
+              </button>
+            </div>
+            <div class="field-feedback" id="confirm-feedback"></div>
+          </div>
+
+          <div class="terms-checkbox">
+            <input type="checkbox" id="terms" required />
+            <label for="terms" class="terms-text">
+              Eu aceito os <a href="#">Termos de Uso</a> e a
+              <a href="#">Política de Privacidade</a> do NumberOne
+            </label>
+          </div>
+          {{ form.submit_button( class="register-button", id="registerBtn" ) }}
+        </form>
+
+        <p class="login-link">
+          Já tem uma conta? <a href="/login">Faça login</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Função para alternar a visibilidade da senha
+      function togglePassword(fieldId) {
+        const passwordField = document.getElementById(fieldId);
+        const toggleBtn = passwordField.nextElementSibling;
+
+        // Alterna o tipo do campo entre 'password' e 'text'
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleBtn.textContent = "🙈"; // Muda o ícone para "esconder"
+        } else {
+          passwordField.type = "password";
+          toggleBtn.textContent = "👁️"; // Muda o ícone para "mostrar"
+        }
+      }
+    </script>
+  </body>
+</html>

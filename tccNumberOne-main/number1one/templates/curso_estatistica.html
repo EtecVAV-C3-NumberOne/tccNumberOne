@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/curso_estatistica/style.css">
+    <title>Estatística - NumberOne</title>
+    
+</head>
+<body>
+    <!-- Header do Curso -->
+    <header class="course-header">
+        <nav class="header-nav">
+            <div class="logo-section">
+                <a href="/" class="logo">NumberOne</a>
+                <div class="course-breadcrumb">
+                    <span>Cursos</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span>Estatística</span>
+                </div>
+            </div>
+            
+            <div class="user-section">
+                <div class="progress-indicator">
+                    <span>Progresso 35%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 35%"></div>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        👤
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="course-layout">
+        <!-- Sidebar de Navegação -->
+        <aside class="course-sidebar">
+            <div class="sidebar-header">
+                <h2 class="course-title">Estatística</h2>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <span>📊</span>
+                        <span>Iniciante</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️</span>
+                        <span>20h</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🎓</span>
+                        <span>7/20</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Módulo 1 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        
+                        <span>1. Fundamentos</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    
+                    <div class="lesson-list">
+                        <div class="lesson-item" id="1_1" onclick="toggleItem(this)">
+                            <div class="lesson-icon ">📖</div>
+                            <span>Introdução à Estatística</span>
+                            <span class="lesson-duration">8min</span>
+                        </div>
+                        <div class="lesson-item" id="1_2" onclick="toggleItem(this)">
+                            <div class="lesson-icon">📖</div>
+                            <span>Variáveis e Constantes</span>
+                            <span class="lesson-duration">12min</span>
+                        </div>
+                        <div class="lesson-item" id="1_3" onclick="toggleItem(this)">
+                            <div class="lesson-icon exercise">📝</div>
+                            <span>Exercícios Práticos</span>
+                            <span class="lesson-duration">20min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <span>2. Equações Lineares</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    <div class="lesson-list">
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Equações de 1º Grau</span>
+                            <span class="lesson-duration">18min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Resolvendo Equações</span>
+                            <span class="lesson-duration">22min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon exercise">📝</div>
+                            <span>Exercícios Práticos</span>
+                            <span class="lesson-duration">25min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon quiz">❓</div>
+                            <span>Quiz do Módulo</span>
+                            <span class="lesson-duration">10min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <span>3. Sistemas de Equações</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    <div class="lesson-list">
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Introdução aos Sistemas</span>
+                            <span class="lesson-duration">16min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Método da Substituição</span>
+                            <span class="lesson-duration">20min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Método da Eliminação</span>
+                            <span class="lesson-duration">24min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- conteudo 1  -->
+        <main class="course-content 1_1 inativo" >
+            <div class="content-header">
+                <h1 class="content-title">Introdução à Estatística</h1>
+                <p class="content-description">
+                    Aprenda os conceitos fundamentais da Estatística e suas devidas implicações.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>⏱️</span>
+                        <span>5 minutos</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Iniciante</span>
+                    </div>
+                </div>
+            </div>    
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. 📌 O que é Estatística? </h2>
+                        <p class="content-text">
+                            A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dados para compreender fenômenos e ajudar na tomada de decisões.
+Ela é usada em praticamente tudo: pesquisas de opinião, estudos científicos, controle de produção, economia, esportes e muito mais.<br><br>
+Por meio de métodos estatísticos, é possível resumir grandes volumes de informações em gráficos, tabelas e medidas como média, mediana e moda, facilitando a visualização e compreensão dos dados.<br><br>
+Além disso, a Estatística permite fazer previsões, identificar padrões e verificar a confiabilidade de resultados, sendo essencial em contextos que envolvem incertezas ou variabilidade.<br>
+                        </p>
+                        <h2 class="section-title">2. 🔍 Etapas do Estudo Estatístico </h2>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Coleta de dados:</strong> obter informações através de pesquisas ou fontes alternativas;</li> 
+                            <li><strong>Organização dos dados:</strong> colocar os dados em tabelas, listas, gráficos para facilitar a leitura; </li> 
+                            <li><strong>Análise dos dados:</strong> calcular medidas estatísticas e identificar padrões; </li> 
+                            <li><strong>Interpretação e conclusão:</strong> apuração e demonstração dos resultados finais obtidos.</li> 
+                        </ul>
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <span>💡</span>
+                                <span>Observação Importante</span>
+                            </div>
+                            <p>A veracidade não está intrínseca nas estatísticas, ou seja, elas podem ser verdadeiras ou não. Visando informação e conhecimentos válidos, é necessário checar a validade das informações utilizadas na estatística.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">3. 📑 Tipos de Dados </h2>
+                        <p class="content-text">
+                            Os dados podem ser classificados de duas formas: 
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Quantitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Discretos:</strong> valores inteiros contáveis (ex.: número de filhos).</li>
+                                <li><strong>Contínuos:</strong> valores que podem ser fracionários (ex.: altura, peso). </li>
+                            </ul>
+                            <li><strong>Qualitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Nominais:</strong> sem ordem lógica (ex.: cor dos olhos, sexo). </li>
+                                <li><strong>Ordinais:</strong> têm ordem (ex.: classificação em 1º, 2º, 3º lugar). </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">  
+                <button class="nav-button secondary invisivel" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>      
+                <div class="nav-button lesson-complete">
+                    <span>✓</span>
+                    <span>Marcar como concluída</span>
+                </div>
+                
+                <button  class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+        </main>
+
+            <!-- conteudo 2  -->
+        <main class="course-content 1_2 inativo" >
+            <div class="content-header">
+                <h1 class="content-title">aula 2</h1>
+                <p class="content-description">
+                    Aprenda os conceitos fundamentais das equações algébricas e como resolver problemas do cotidiano usando equações simples.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>▶</span>
+                        <span>Vídeo-aula</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>⏱️</span>
+                        <span>15 minutos</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Iniciante</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">O que são Equações?</h2>
+                        <p class="content-text">
+                            Uma equação é uma igualdade matemática que contém uma ou mais incógnitas (variáveis). 
+                            O objetivo ao resolver uma equação é encontrar o valor da incógnita que torna a igualdade verdadeira.
+                        </p>
+                        <p class="content-text">
+                            Por exemplo, na equação <strong>x + 3 = 7</strong>, queremos descobrir qual valor de x faz com que 
+                            a soma de x com 3 seja igual a 7.
+                        </p>
+
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <span>💡</span>
+                                <span>Conceito Importante</span>
+                            </div>
+                            <p>Uma equação é como uma balança em equilíbrio. O que fazemos de um lado da igualdade, devemos fazer do outro para manter o equilíbrio.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">Elementos de uma Equação</h2>
+                        <p class="content-text">
+                            Toda equação possui alguns elementos fundamentais que devemos conhecer:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Incógnita:</strong> A variável que queremos descobrir (geralmente representada por x, y, z)</li>
+                            <li><strong>Coeficientes:</strong> Os números que multiplicam as variáveis</li>
+                            <li><strong>Termos independentes:</strong> Os números que não possuem variáveis</li>
+                            <li><strong>Membros:</strong> As expressões de cada lado da igualdade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+                <div class="nav-button lesson-complete">
+                    <span>✓</span>
+                    <span>Marcar como concluída</span>
+                </div>
+                
+                <button class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+        </main>
+
+            <!-- conteudo 3 -->
+            <main class="course-content 1_3 inativo" >
+            <div class="content-header">
+                <h1 class="content-title">aula 3</h1>
+                <p class="content-description">
+                    Aprenda os conceitos fundamentais das equações algébricas e como resolver problemas do cotidiano usando equações simples.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>▶</span>
+                        <span>Vídeo-aula</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>⏱️</span>
+                        <span>15 minutos</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Iniciante</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">O que são Equações?</h2>
+                        <p class="content-text">
+                            Uma equação é uma igualdade matemática que contém uma ou mais incógnitas (variáveis). 
+                            O objetivo ao resolver uma equação é encontrar o valor da incógnita que torna a igualdade verdadeira.
+                        </p>
+                        <p class="content-text">
+                            Por exemplo, na equação <strong>x + 3 = 7</strong>, queremos descobrir qual valor de x faz com que 
+                            a soma de x com 3 seja igual a 7.
+                        </p>
+
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <span>💡</span>
+                                <span>Conceito Importante</span>
+                            </div>
+                            <p>Uma equação é como uma balança em equilíbrio. O que fazemos de um lado da igualdade, devemos fazer do outro para manter o equilíbrio.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">Elementos de uma Equação</h2>
+                        <p class="content-text">
+                            Toda equação possui alguns elementos fundamentais que devemos conhecer:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Incógnita:</strong> A variável que queremos descobrir (geralmente representada por x, y, z)</li>
+                            <li><strong>Coeficientes:</strong> Os números que multiplicam as variáveis</li>
+                            <li><strong>Termos independentes:</strong> Os números que não possuem variáveis</li>
+                            <li><strong>Membros:</strong> As expressões de cada lado da igualdade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- navegar -->
+            <div class="lesson-navigation">
+                <button  class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+                <div class="nav-button lesson-complete">
+                    <span>✓</span>
+                    <span>Marcar como concluída</span>
+                </div>
+                <button  class="nav-button secondary invisivel" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+            function diminuir(botao) {
+                const main = botao.closest("main")
+                const teudo = (main.classList[1])
+                let tema = +teudo[2] - 1;
+                main.classList.add('inativo')
+
+                const anterior = document.querySelector('main.course-content.'+CSS.escape("1_"+String(tema)));
+                anterior.classList.remove('inativo')
+
+                const div = document.getElementById(teudo);
+                div.classList.remove('active')
+                teudo2 = teudo.slice(0, 2) + String(tema)
+                console.log(teudo2)
+                const div2 = document.getElementById(teudo2)
+                div2.classList.add('active')
+            }
+
+            function aumentar(botao) {
+                const main = botao.closest("main")
+                const teudo = (main.classList[1])
+                let tema = +teudo[2] + 1;
+                main.classList.add('inativo')
+
+                const anterior = document.querySelector('main.course-content.'+CSS.escape("1_"+String(tema)));
+                anterior.classList.remove('inativo')
+
+                const div = document.getElementById(teudo);
+                div.classList.remove('active')
+                teudo2 = teudo.slice(0, 2) + String(tema)
+                console.log(teudo2)
+                const div2 = document.getElementById(teudo2)
+                div2.classList.add('active')
+            }
+
+
+            function toggleItem(lesson) {
+                const pai = lesson.parentElement;
+                const filhos = pai.children;
+                console.log(lesson.id)
+                let ativacao = false;
+                for (let i = 0; i < filhos.length; i++) {
+                    if (filhos[i].classList.contains('active')) {
+                    ativacao = true;
+                    break;
+                    }
+                }
+                if (ativacao) {
+                    for (let i = 0; i < filhos.length; i++) {
+                    filhos[i].classList.remove('active');
+                    }
+                }
+                lesson.classList.add('active');
+                const teudo = document.querySelectorAll(".course-content");
+                teudo.forEach(elemento =>
+                {
+                    ref = elemento.classList.contains(lesson.id)
+                    if (ref){elemento.classList.remove('inativo')}
+                    else {ref2=elemento.classList.contains('inativo'); if (ref2){} else {elemento.classList.add('inativo')}}
+                }
+                )
+                
+            }
+
+
+        function toggleModule(header) {
+            const toggle = header.querySelector('.module-toggle');
+            const lessonList = header.nextElementSibling;
+            const isExpanded = toggle.classList.contains('expanded');
+            
+            if (isExpanded) {
+                toggle.classList.remove('expanded');
+                lessonList.classList.remove('expanded');
+                header.classList.remove('active');
+                lessonList.style.display = 'none';
+            } else {
+                header.classList.add('active');
+                toggle.classList.add('expanded');
+                lessonList.classList.add('expanded');
+                lessonList.style.display = 'block';
+            }
+        }
+
+        function playVideo() {
+            const videoContainer = document.querySelector('.video-container');
+            const placeholder = document.querySelector('.video-placeholder');
+            
+            // Simular carregamento do vídeo
+            placeholder.innerHTML = '<div style="color: white;">Carregando vídeo...</div>';
+            
+            setTimeout(() => {
+                placeholder.innerHTML = `
+                    <div style="color: white; text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎬</div>
+                        <div>Vídeo: Introdução às Equações</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem;">15:30 / 15:30</div>
+                        <div style="margin-top: 1rem; font-size: 0.8rem;">(Esta é uma simulação)</div>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        // Simular progresso da aula
+        function updateProgress() {
+            const progressFill = document.querySelector('.progress-fill');
+            const currentWidth = parseInt(progressFill.style.width);
+            const newWidth = Math.min(currentWidth + 5, 100);
+            
+            progressFill.style.width = newWidth + '%';
+            
+            const progressText = document.querySelector('.progress-indicator span');
+            progressText.textContent = `Progresso ${newWidth}%`;
+        }
+
+        // Marcar aula como concluída
+        document.querySelector('.lesson-complete').addEventListener('click', function() {
+            this.style.color = '#10b981';
+            this.innerHTML = '<span>✓</span><span>Aula concluída!</span>';
+            updateProgress();
+        });
+
+        // Navegação por teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                // Aula anterior
+                console.log('Navegando para aula anterior');
+            } else if (e.key === 'ArrowRight') {
+                // Próxima aula
+                console.log('Navegando para próxima aula');
+            } else if (e.key === ' ') {
+                // Pausar/reproduzir vídeo
+                e.preventDefault();
+                console.log('Pausar/reproduzir vídeo');
+            }
+        });
+
+        // Auto-save do progresso
+        let progressTimer;
+        function saveProgress() {
+            clearTimeout(progressTimer);
+            progressTimer = setTimeout(() => {
+                console.log('Progresso salvo automaticamente');
+            }, 2000);
+        }
+
+        // Simular salvamento a cada interação
+        document.addEventListener('scroll', saveProgress);
+        document.addEventListener('click', saveProgress);
+    </script>
+</body>
+</html>

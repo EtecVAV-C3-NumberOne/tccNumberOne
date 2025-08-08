@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/login/style.css">
+    <title>Login - NumberOne</title>
+    
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-visual">
+            <div class="visual-content">
+                <div class="math-icon">∑</div>
+                <h2 class="visual-title">NumberOne</h2>
+                <p class="visual-subtitle">Desbloqueie todo o seu potencial matemático com nossa plataforma de ensino interativa</p>
+            </div>
+        </div>
+
+        <div class="login-form-section">
+            <a href="/" class="logo">NumberOne</a>
+            
+            <div class="form-header">
+                <h1 class="form-title">Bem-vindo de volta!</h1>
+                <p class="form-subtitle">Faça login para continuar seus estudos</p>
+            </div>
+
+            <form method="post" class="login-form" id="loginForm">
+                {{ form.csrf_token }}
+                
+                <div class="input-group">
+                    <label class="input-label" for="email">{{ form.email.label() }}</label>
+                    {{ form.email( class="input-field", placeholder="seu@email.com", )}}
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" for="password">{{ form.password.label() }}</label>
+                    <div style="position: relative;">
+                        {{ form.password(id="password", class="input-field",
+              placeholder="Crie uma senha") }}
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                {{ form.submit_button( class="login-button", id="loginBtn" ) }}
+                
+            </form>
+
+            
+
+            <p class="signup-link">
+                Não tem uma conta? <a href="/register">Cadastre-se gratuitamente</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleBtn = document.querySelector('.password-toggle');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordField.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        
+        
+
+      
+        
+
+        
+    </script>
+</body>
+</html>
