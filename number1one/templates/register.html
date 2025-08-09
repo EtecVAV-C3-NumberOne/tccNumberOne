@@ -12,12 +12,12 @@
       <div class="register-visual">
         <div class="visual-content">
           <div class="math-icons">
-            <div class="math-icon">∑</div>
-            <div class="math-icon">∫</div>
-            <div class="math-icon">√</div>
-            <div class="math-icon">π</div>
-            <div class="math-icon">∞</div>
-            <div class="math-icon">∆</div>
+            <div>∑</div>
+            <div>∫</div>
+            <div>√</div>
+            <div>π</div>
+            <div>∞</div>
+            <div>∆</div>
           </div>
           <h2 class="visual-title">Junte-se ao NumberOne</h2>
           <p class="visual-subtitle">
@@ -92,6 +92,9 @@
             <div style="position: relative">
               {{ form.confirm_password(id="confirmPassword",
               class="input-field", placeholder="Digite a senha novamente") }}
+              {% for error in form.confirm_password.errors %}
+            <div class="field-feedback" id="confirm-feedback">{{ error }}</div>
+            {% endfor %}
               <button
                 type="button"
                 class="password-toggle"
@@ -100,7 +103,7 @@
                 👁️
               </button>
             </div>
-            <div class="field-feedback" id="confirm-feedback"></div>
+            
           </div>
 
           <div class="terms-checkbox">
@@ -110,7 +113,7 @@
               <a href="#">Política de Privacidade</a> do NumberOne
             </label>
           </div>
-          {{ form.submit_button( class="register-button", id="registerBtn" ) }}
+          {{ form.submit_button( class="register-button" ) }}
         </form>
 
         <p class="login-link">
@@ -120,18 +123,16 @@
     </div>
 
     <script>
-      // Função para alternar a visibilidade da senha
       function togglePassword(fieldId) {
         const passwordField = document.getElementById(fieldId);
         const toggleBtn = passwordField.nextElementSibling;
 
-        // Alterna o tipo do campo entre 'password' e 'text'
         if (passwordField.type === "password") {
           passwordField.type = "text";
-          toggleBtn.textContent = "🙈"; // Muda o ícone para "esconder"
+          toggleBtn.textContent = "🙈"; 
         } else {
           passwordField.type = "password";
-          toggleBtn.textContent = "👁️"; // Muda o ícone para "mostrar"
+          toggleBtn.textContent = "👁️"; 
         }
       }
     </script>

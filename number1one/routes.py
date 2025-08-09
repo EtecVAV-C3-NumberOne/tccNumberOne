@@ -31,8 +31,8 @@ def login():
             login_user(usuario, remember=True)
             return redirect(url_for("home"))
         else:
-            formLogin.email.errors.append("E-mail ou senha inválidos.")
-            formLogin.password.errors.append("E-mail ou senha inválidos.")
+            formLogin.email.errors.append("E-mail ou senha incorretos.")
+            formLogin.password.errors.append("E-mail ou senha incorretos.")
                 
     return render_template('login.html', form = formLogin)
 

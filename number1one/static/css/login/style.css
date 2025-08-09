@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -15,19 +17,6 @@ body {
     position: relative;
 }
 
-/* Background pattern */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
 
 .login-container {
     background: white;
@@ -62,14 +51,9 @@ body::before {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-    animation: float 20s linear infinite;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
 }
 
-@keyframes float {
-    0% { transform: translateX(0) translateY(0); }
-    100% { transform: translateX(-50px) translateY(-50px); }
-}
 
 .visual-content {
     text-align: center;
@@ -83,10 +67,6 @@ body::before {
     animation: pulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
 
 .visual-title {
     font-size: 2rem;
@@ -181,9 +161,6 @@ body::before {
     padding: 0.25rem;
 }
 
-.password-toggle:hover {
-    color: #2563eb;
-}
 
 .form-options {
     display: flex;
@@ -212,11 +189,11 @@ body::before {
 }
 
 .forgot-password:hover {
-    color: #1d4ed8;
+    color: #213e91;
 }
 
 .login-button {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: #2563eb;
     color: white;
     border: none;
     padding: 0.875rem;
@@ -229,23 +206,9 @@ body::before {
     overflow: hidden;
 }
 
-.login-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;    
-    transition: left 0.5s ease;
-}
-
 .login-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-}
-
-.login-button:hover::before {
-    left: 100%;
 }
 
 .signup-link {
@@ -295,29 +258,4 @@ body::before {
         gap: 1rem;
         align-items: flex-start;
     }
-}
-
-/* Loading animation */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid transparent;
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
