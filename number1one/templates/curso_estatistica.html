@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/curso_estatistica/style.css">
+    <title>Estatística - NumberOne</title>
+    
+</head>
+<body>
+    <!-- Header do Curso -->
+    <header class="course-header">
+        <nav class="header-nav">
+            <div class="logo-section">
+                <a href="/" class="logo">NumberOne</a>
+                <div class="course-breadcrumb">
+                    <span>Cursos</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span>Estatística</span>
+                </div>
+            </div>
+            
+            <div class="user-section">
+                <div class="progress-indicator">
+                    <span>Progresso 35%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 35%"></div>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        👤
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="course-layout">
+        <!-- Sidebar de Navegação -->
+        <aside class="course-sidebar">
+            <div class="sidebar-header">
+                <h2 class="course-title">Estatística</h2>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <span>📊</span>
+                        <span>Iniciante</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️</span>
+                        <span>20h</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🎓</span>
+                        <span>7/20</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Módulo 1 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        
+                        <span>1. Fundamentos</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    
+                    <div class="lesson-list">
+                        <div class="lesson-item" id="1_1" onclick="toggleItem(this)">
+                            <div class="lesson-icon ">📖</div>
+                            <span>Introdução à Estatística</span>
+                            <span class="lesson-duration">8min</span>
+                        </div>
+                        <div class="lesson-item" id="1_2" onclick="toggleItem(this)">
+                            <div class="lesson-icon">📖</div>
+                            <span>Conceituação teórica</span>
+                            <span class="lesson-duration">12min</span>
+                        </div>
+                        <div class="lesson-item" id="1_3" onclick="toggleItem(this)">
+                            <div class="lesson-icon exercise">📝</div>
+                            <span>Exercícios Práticos</span>
+                            <span class="lesson-duration">20min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <span>2. Equações Lineares</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    <div class="lesson-list">
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Equações de 1º Grau</span>
+                            <span class="lesson-duration">18min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Resolvendo Equações</span>
+                            <span class="lesson-duration">22min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon exercise">📝</div>
+                            <span>Exercícios Práticos</span>
+                            <span class="lesson-duration">25min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon quiz">❓</div>
+                            <span>Quiz do Módulo</span>
+                            <span class="lesson-duration">10min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <span>3. Sistemas de Equações</span>
+                        <span class="module-toggle">▶</span>
+                    </div>
+                    <div class="lesson-list">
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Introdução aos Sistemas</span>
+                            <span class="lesson-duration">16min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Método da Substituição</span>
+                            <span class="lesson-duration">20min</span>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon video">▶</div>
+                            <span>Método da Eliminação</span>
+                            <span class="lesson-duration">24min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- conteudo 1  -->
+        <main class="course-content 1_1 inativo" >
+            <div class="content-header">
+                <h1 class="content-title">Introdução à Estatística</h1>
+                <p class="content-description">
+                    Aprenda os conceitos fundamentais da Estatística e suas devidas implicações.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>⏱️</span>
+                        <span>5 minutos</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Iniciante</span>
+                    </div>
+                </div>
+            </div>    
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. 📌 O que é Estatística? </h2>
+                        <p class="content-text">
+                            A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dados para compreender fenômenos e ajudar na tomada de decisões.
+Ela é usada em praticamente tudo: pesquisas de opinião, estudos científicos, controle de produção, economia, esportes e muito mais.<br><br>
+Por meio de métodos estatísticos, é possível resumir grandes volumes de informações em gráficos, tabelas e medidas como média, mediana e moda, facilitando a visualização e compreensão dos dados.<br><br>
+Além disso, a Estatística permite fazer previsões, identificar padrões e verificar a confiabilidade de resultados, sendo essencial em contextos que envolvem incertezas ou variabilidade.<br>
+                        </p>
+                        <h2 class="section-title">2. 🔍 Etapas do Estudo Estatístico </h2>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Coleta de dados:</strong> obter informações através de pesquisas ou fontes alternativas;</li> 
+                            <li><strong>Organização dos dados:</strong> colocar os dados em tabelas, listas, gráficos para facilitar a leitura; </li> 
+                            <li><strong>Análise dos dados:</strong> calcular medidas estatísticas e identificar padrões; </li> 
+                            <li><strong>Interpretação e conclusão:</strong> apuração e demonstração dos resultados finais obtidos.</li> 
+                        </ul>
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <span>💡</span>
+                                <span>Observação Importante</span>
+                            </div>
+                            <p>A veracidade não está intrínseca nas estatísticas, ou seja, elas podem ser verdadeiras ou não. Visando informação e conhecimentos válidos, é necessário checar a validade das informações utilizadas na estatística.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">3. 📑 Tipos de Dados </h2>
+                        <p class="content-text">
+                            Os dados podem ser classificados de duas formas: 
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Quantitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Discretos:</strong> valores inteiros contáveis (ex.: número de filhos).</li>
+                                <li><strong>Contínuos:</strong> valores que podem ser fracionários (ex.: altura, peso). </li>
+                            </ul>
+                            <li><strong>Qualitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Nominais:</strong> sem ordem lógica (ex.: cor dos olhos, sexo). </li>
+                                <li><strong>Ordinais:</strong> têm ordem (ex.: classificação em 1º, 2º, 3º lugar). </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">  
+                <button class="nav-button secondary invisivel" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>      
+                <div class="nav-button lesson-complete">
+                    <span>✓</span>
+                    <span>Marcar como concluída</span>
+                </div>
+                
+                <button  class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+        </main>
+
+            <!-- conteudo 2  -->
+        <main class="course-content 1_2  inativo" >
+            <div class="content-header">
+                <h1 class="content-title">Conceituação teórica</h1>
+                <p class="content-description">
+                    Aprofundamento nos conceitos básicos de Estatística e sua aplicação prática.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>⏱️</span>
+                        <span>10 minutos</span>
+                    </div>
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Intermediário</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. 📏 Medidas Estatísticas Fundamentais </h2>
+                        <p class="content-text">
+                            Amplamente usados nas estatísticas, os seguintes conceitos são de suma importância para interpretação e aplicação plena dos dados coletados, possibilitando conclusões lógicas e realistas.
+                            Exemplos:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Média Aritmética</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>Soma de todos os valores dividida pelo número de elementos</li>
+                                <li>x + y + z+ ... / w</li>
+                                <ul style="padding-left: 5%;">
+                                    
+                                    <li>w = quantidade de valores</li>
+                                    <li>x,y,z = valores (exemplificação)</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Mediana</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que divide o conjunto ao meio quando ele está em ordem crescente.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Se o número de valores for ímpar, a mediana é o valor que se encontra entre duas metades iguais do conjunto, considerando a menor divisão possível.</li>
+                                    <li>Se o número de valores for par, a mediana é a média dos dois valores encontrados entre duas metades iguais do conjunto, considerando a menor divisão possível e diferente de zero.</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Moda</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que mais se repete dentro do conjunto.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
+                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Moda</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que mais se repete dentro do conjunto.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
+                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">2. 📋 Tabelas Estatísticas </h2>
+                        <p class="content-text">
+                            Tabelas são um elemento comumente usado na exposição de dados, dada a praticidade de seus elementos visuais e como os organiza. Dentre a composição das tabelas, estão:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Título:</strong> Indica o assunto da tabela.</li>
+                            <li><strong>Cabeçalho:</strong> Nomes das colunas.</li>
+                            <li><strong>Corpo:</strong> Onde os dados estão dispostos.</li>
+                            <li><strong>Fonte:</strong> Origem dos dados.</li>
+                        </ul>
+                        <br>
+                        <p class="content-text">
+                            Tabelas de frequência são um subtipo das tabelas estatísticas e tem isso e isso e isso
+                        </p>
+                        <h2 class="section-title">3. 📊 Tipos de Gráficos </h2>
+                        <p class="content-text">
+                            (Explicação detalhada sobre gráficos)
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Gráficos de colunas/barras</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Barras verticais ou horizontais</li>
+                                    <li>Usado para comparar valores</li>
+                                </ul>
+                            <li><strong>Gráfico de linhas</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pontos ligados por linhas.</li>
+                                    <li>Usado para mostrar evolução ao longo do tempo.</li>
+                                </ul>
+                            <li><strong>Gráfico de setores</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Representa proporções em um círculo.</li>
+                                    <li>Cada “fatia” representa uma parte do total.</li>
+                                </ul>
+                            <li><strong>Histograma</strong></li>
+                            <ul style="padding-left: 5%;">
+                                    <li>Gráfico de barras coladas. </li>
+                                    <li>Usado para dados contínuos agrupados em intervalos.</li>
+                                </ul>
+                            <li><strong>Pictograma</strong></li>
+                            <ul style="padding-left: 5%;">
+                                    <li>Usa figuras ou símbolos para representar quantidades.</li>  
+                                </ul>
+                        </ul>
+                        <h2 class="section-title">4. 🧠 Interpretação e aplicações na prática </h2>
+                        <p class="content-text">
+                            Ao analisarmos e interpretarmos estatísticas, é essencial se assegurar do entendimento correto das informações, em alinhamento com o propósito do autor. Paralalelamente, deve-se prestar atenção às medidas usadas, valores apresentados, além de identificar tendências/padrões.
+                            Os hábitos supracitados evitam uma vasta gama de possíveis problemáticas como conclusões/resultados falaciosos, advindos de amostras mal escolhidas ou impertinentes, manipulação de dados e, finalmente, apresentação de tendências confusas e irrelevantes que suscitam desinformação.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+                <div class="nav-button lesson-complete">
+                    <span>✓</span>
+                    <span>Marcar como concluída</span>
+                </div>
+                
+                <button class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+        </main>
+
+            <!-- conteudo 3 -->
+            <main class="course-content 1_3 inativo">
+        <div class="cabecalho-conteudo">
+            <h1 class="titulo-conteudo">Exercícios</h1>
+            <p class="descricao-conteudo">Prova acerca dos conteúdos do tópico 'Fundamentos'. Ao clicar em 'Continuar', seu acesso às aulas teóricas será restringido — sendo assim, se certifique que está pronto para a realização da avaliação.</p>
+            
+            <div class="metadados-aula">
+                <div class="emblema-meta avaliacao">
+                    📝 Avaliação
+                </div>
+                <div class="emblema-meta">
+                    ⏱️ 20 minutos
+                </div>
+                <div class="emblema-meta intermediario">
+                    🎯 Intermediário
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <center>
+        <button class="botao-azul" onclick="ativarEx(this)">
+            Continuar
+        </button>
+        </center>
+        <div class="corpo-conteudo inativo">
+            <div class="secao-conteudo">
+                <div class="secao-progresso">
+                    <div class="titulo-progresso">Progresso da Avaliação</div>
+                    <div class="barra-progresso">
+                        <div class="preenchimento-progresso" style="width: 25%"></div>
+                    </div>
+                    <div class="texto-progresso">Questão 1 de 4</div>
+                </div>
+
+                <div class="cartao-exercicio">
+                    <div class="cabecalho-exercicio">
+                        <div class="numero-exercicio">1</div>
+                        <div class="tipo-exercicio">Múltipla Escolha</div>
+                    </div>
+                    
+                    <div class="pergunta-exercicio">
+                        <strong>O que é Estatística?</strong><br><br>
+                        Com base no conteúdo estudado sobre os fundamentos da Estatística, selecione a alternativa que melhor define o que é Estatística e suas principais características.
+                    </div>
+
+                    <ul class="opcoes">
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">A</div>
+                            <span>A Estatística é uma área da Matemática que apenas coleta dados numéricos para fazer cálculos básicos.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">B</div>
+                            <span>A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dadospara compreender fenômenos e ajudar na tomada de decisões.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">C</div>
+                            <span>A Estatística serve apenas para criar gráficos bonitos e apresentações visuais.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">D</div>
+                            <span>A Estatística é usada exclusivamente em pesquisas acadêmicas, sem aplicação prática.</span>
+                        </li>
+                    </ul>
+
+                    <div class="acoes-exercicio">
+                        <button class="botao botao-principal" onclick="repassarQuest()">Voltar questão</button>
+                        <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
+                        <button class="botao botao-principal" onclick="proximaQuestao()">Próxima questão</button>
+                    </div>
+                </div>
+
+                <div class="cartao-resumo">
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Resumo da Avaliação</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Acompanhe seu progresso nesta avaliação</p>
+                    
+                    <div class="estatisticas-resumo">
+                        <div class="estatistica">
+                            <span class="numero-estatistica">1</span>
+                            <span class="rotulo-estatistica">Respondidas</span>
+                        </div>
+                        <div class="estatistica">
+                            <span class="numero-estatistica">3</span>
+                            <span class="rotulo-estatistica">Restantes</span>
+                        </div>
+                        <div class="estatistica">
+                            <span class="numero-estatistica">15:30</span>
+                            <span class="rotulo-estatistica">Tempo Restante</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botoes-navegacao">
+                    <a href="#" class="botao-navegacao primario">
+                        Finalizar Avaliação →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    </div>
+
+    <script>
+        let respostas = {}
+        let questaoAtual = 1;
+        let totalQuestoes = 4;
+        let tempoRestante = 15 * 60 + 30; // 15:30 em segundos
+
+        function selecionarOpcao(opcao) {
+            // Remove seleção anterior
+            document.querySelectorAll('.opcao').forEach(opt => {
+                opt.classList.remove('selecionada');
+            });
+            
+            // Adiciona seleção à opção clicada
+            opcao.classList.add('selecionada');
+        }
+
+
+        function limparSelecao() {
+            document.querySelectorAll('.opcao').forEach(opt => {
+                opt.classList.remove('selecionada');
+            });
+        }
+
+        function proximaQuestao() {
+            const selecionada = document.querySelector('.opcao.selecionada');
+            if (!selecionada) {
+                alert('Por favor, selecione uma alternativa antes de continuar.');
+                return;
+            }
+
+            const resposta = document.querySelector('.selecionada')
+                if (resposta){
+                    const letrinha = resposta.querySelector('.letra-opcao');
+                    respostas[questaoAtual] = letrinha.textContent
+                }
+
+            if (questaoAtual < totalQuestoes) {
+                questaoAtual++;
+                atualizarProgresso();
+                carregarProximaQuestao();
+            } else {
+                if (confirm('Tem certeza que deseja finalizar a avaliação?')) {
+                    alert('Avaliação finalizada! Redirecionando para os resultados...');
+                }
+            }
+        }
+        function repassarQuest() {
+            const selecionada = document.querySelector('.opcao.selecionada');
+            if (questaoAtual == 1) {
+                
+            } else {
+                questaoAtual--;
+                atualizarProgresso();
+                carregarProximaQuestao();
+            }
+        }
+
+        function atualizarProgresso() {
+            const preenchimentoProgresso = document.querySelector('.preenchimento-progresso');
+            const textoProgresso = document.querySelector('.texto-progresso');
+            const porcentagem = (questaoAtual / totalQuestoes) * 100;
+            
+            preenchimentoProgresso.style.width = porcentagem + '%';
+            textoProgresso.textContent = `Questão ${questaoAtual} de ${totalQuestoes}`;
+            
+            document.querySelector('.estatisticas-resumo .estatistica:first-child .numero-estatistica').textContent = questaoAtual;
+            document.querySelector('.estatisticas-resumo .estatistica:nth-child(2) .numero-estatistica').textContent = totalQuestoes - questaoAtual;
+        }
+
+        function carregarProximaQuestao() {
+            const cartaoExercicio = document.querySelector('.cartao-exercicio');
+            cartaoExercicio.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                document.querySelector('.numero-exercicio').textContent = questaoAtual;
+                limparSelecao();
+                cartaoExercicio.style.opacity = '1';
+                console.log(respostas)
+                if (respostas[questaoAtual]){
+                    const letros = document.querySelectorAll('.opcao')
+                    letros.forEach(elemento => {
+                        const teste = elemento.querySelector('.letra-opcao')
+                        console.log(teste.textContent)
+                    if (teste.textContent == respostas[questaoAtual]) {
+                        elemento.classList.add('selecionada');
+                        }
+                    });
+
+                }
+                
+                
+                if (questaoAtual === 2) {
+                    document.querySelector('.pergunta-exercicio').innerHTML = 
+                        '<strong>Etapas do Estudo Estatístico</strong><br><br>' +
+                        'Qual das alternativas apresenta corretamente as etapas do estudo estatístico na ordem adequada?';
+                }
+            }, 300);
+        }
+
+        // Cronômetro
+        function atualizarCronometro() {
+            const minutos = Math.floor(tempoRestante / 60);
+            const segundos = tempoRestante % 60;
+            const exibicaoCronometro = document.querySelector('.estatisticas-resumo .estatistica:last-child .numero-estatistica');
+            
+            exibicaoCronometro.textContent = `${minutos}:${segundos.toString().padStart(2, '0')}`;
+            
+            if (tempoRestante > 0) {
+                tempoRestante--;
+            } else {
+                alert('Tempo esgotado! A avaliação será finalizada automaticamente.');
+                // Finalizar avaliação automaticamente
+            }
+        }
+
+        // Iniciar cronômetro
+        setInterval(atualizarCronometro, 1000);
+
+        // Animações de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartoes = document.querySelectorAll('.cartao-exercicio, .secao-progresso, .cartao-resumo');
+            cartoes.forEach((cartao, indice) => {
+                cartao.style.animationDelay = `${indice * 0.1}s`;
+            });
+        });
+
+            function ativarEx(botao) {
+                prova = document.querySelector('.corpo-conteudo')
+                prova.classList.remove('inativo')
+                botao.classList.add('inativo')
+                const tudo = document.querySelectorAll('.module-header')
+                const tudo2 = document.querySelectorAll('.lesson-list')
+                tudo.forEach(elemento =>
+                {
+                    ref = elemento.classList.contains('active')
+                    if (ref) {elemento.classList.remove('active')}
+                    elemento.classList.add('desativado')}
+                
+                )
+                tudo2.forEach(elemento =>
+                {
+               
+                         elemento.classList.remove('expanded')
+                         elemento.style.display = 'none'
+
+                       
+
+                }
+                )
+            }
+
+            function diminuir(botao) {
+                const main = botao.closest("main")
+                const teudo = (main.classList[1])
+                let tema = +teudo[2] - 1;
+                main.classList.add('inativo')
+
+                const anterior = document.querySelector('main.course-content.'+CSS.escape("1_"+String(tema)));
+                anterior.classList.remove('inativo')
+
+                const div = document.getElementById(teudo);
+                div.classList.remove('active')
+                teudo2 = teudo.slice(0, 2) + String(tema)
+       
+                const div2 = document.getElementById(teudo2)
+                div2.classList.add('active')
+            }
+
+            function aumentar(botao) {
+                const main = botao.closest("main")
+                const teudo = (main.classList[1])
+                let tema = +teudo[2] + 1;
+                main.classList.add('inativo')
+
+                const anterior = document.querySelector('main.course-content.'+CSS.escape("1_"+String(tema)));
+                anterior.classList.remove('inativo')
+
+                const div = document.getElementById(teudo);
+                div.classList.remove('active')
+                teudo2 = teudo.slice(0, 2) + String(tema)
+ 
+                const div2 = document.getElementById(teudo2)
+                div2.classList.add('active')
+            }
+
+
+            function toggleItem(lesson) {
+                const pai = lesson.parentElement;
+                const filhos = pai.children;
+          
+                let ativacao = false;
+                for (let i = 0; i < filhos.length; i++) {
+                    if (filhos[i].classList.contains('active')) {
+                    ativacao = true;
+                    break;
+                    }
+                }
+                if (ativacao) {
+                    for (let i = 0; i < filhos.length; i++) {
+                    filhos[i].classList.remove('active');
+                    }
+                }
+                lesson.classList.add('active');
+                const teudo = document.querySelectorAll(".course-content");
+                teudo.forEach(elemento =>
+                {
+                    ref = elemento.classList.contains(lesson.id)
+                    if (ref){elemento.classList.remove('inativo')}
+                    else {ref2=elemento.classList.contains('inativo'); if (ref2){} else {elemento.classList.add('inativo')}}
+                }
+                )
+                
+            }
+
+
+        function toggleModule(header) {
+            const toggle = header.querySelector('.module-toggle');
+            const lessonList = header.nextElementSibling;
+            const isExpanded = toggle.classList.contains('expanded');
+            
+            if (isExpanded) {
+                toggle.classList.remove('expanded');
+                lessonList.classList.remove('expanded');
+                header.classList.remove('active');
+                lessonList.style.display = 'none';
+            } else {
+                header.classList.add('active');
+                toggle.classList.add('expanded');
+                lessonList.classList.add('expanded');
+                lessonList.style.display = 'block';
+            }
+        }
+
+        function playVideo() {
+            const videoContainer = document.querySelector('.video-container');
+            const placeholder = document.querySelector('.video-placeholder');
+            
+            // Simular carregamento do vídeo
+            placeholder.innerHTML = '<div style="color: white;">Carregando vídeo...</div>';
+            
+            setTimeout(() => {
+                placeholder.innerHTML = `
+                    <div style="color: white; text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎬</div>
+                        <div>Vídeo: Introdução às Equações</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem;">15:30 / 15:30</div>
+                        <div style="margin-top: 1rem; font-size: 0.8rem;">(Esta é uma simulação)</div>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        // Simular progresso da aula
+        function updateProgress() {
+            const progressFill = document.querySelector('.progress-fill');
+            const currentWidth = parseInt(progressFill.style.width);
+            const newWidth = Math.min(currentWidth + 5, 100);
+            
+            progressFill.style.width = newWidth + '%';
+            
+            const progressText = document.querySelector('.progress-indicator span');
+            progressText.textContent = `Progresso ${newWidth}%`;
+        }
+
+        // Marcar aula como concluída
+        document.querySelector('.lesson-complete').addEventListener('click', function() {
+            this.innerHTML = '<span>✓</span>';
+            updateProgress();
+        });
+
+    </script>
+</body>
+</html>
