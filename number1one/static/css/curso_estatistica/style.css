@@ -523,6 +523,14 @@ body {
     transform: translateY(-2px);
 }
 
+.terminou {
+    
+    
+    pointer-events: none; 
+    opacity: 0.5; 
+    user-select: none; 
+}
+
 .lesson-complete {
     display: flex;
     align-items: center;

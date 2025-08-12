@@ -214,9 +214,8 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 <button class="nav-button secondary invisivel" onclick="diminuir(this)">
                     ◀ Aula Anterior
                 </button>      
-                <div class="nav-button lesson-complete">
-                    <span>✓</span>
-                    <span>Marcar como concluída</span>
+                <div class="nav-button lesson-complete" onclick="cinzento(this)">
+                    <span>✓ Marcar como concluída</span>
                 </div>
                 
                 <button  class="nav-button primary" onclick="aumentar(this)">
@@ -355,9 +354,8 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     ◀ Aula Anterior
                 </button>
                 
-                <div class="nav-button lesson-complete">
-                    <span>✓</span>
-                    <span>Marcar como concluída</span>
+                <div class="nav-button lesson-complete" onclick="cinzento(this)">
+                    <span>✓ Marcar como concluída</span>
                 </div>
                 
                 <button class="nav-button primary" onclick="aumentar(this)">
@@ -408,25 +406,24 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     
                     <div class="pergunta-exercicio">
                         <strong>O que é Estatística?</strong><br><br>
-                        Com base no conteúdo estudado sobre os fundamentos da Estatística, selecione a alternativa que melhor define o que é Estatística e suas principais características.
                     </div>
 
                     <ul class="opcoes">
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">A</div>
-                            <span>A Estatística é uma área da Matemática que apenas coleta dados numéricos para fazer cálculos básicos.</span>
+                            <span>Uma área da matemática que estuda apenas números inteiros.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">B</div>
-                            <span>A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dadospara compreender fenômenos e ajudar na tomada de decisões.</span>
+                            <span>Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">C</div>
-                            <span>A Estatística serve apenas para criar gráficos bonitos e apresentações visuais.</span>
+                            <span>A ciência que cria dados para pesquisas.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">D</div>
-                            <span>A Estatística é usada exclusivamente em pesquisas acadêmicas, sem aplicação prática.</span>
+                            <span>Apenas a criação de gráficos para mostrar informações.</span>
                         </li>
                     </ul>
 
@@ -456,12 +453,13 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                         </div>
                     </div>
                 </div>
-
-                <div class="botoes-navegacao">
-                    <a href="#" class="botao-navegacao primario">
-                        Finalizar Avaliação →
-                    </a>
-                </div>
+                    <div class="botoes-navegacao">
+                        
+                            <a href="#" class="botao-navegacao primario">
+                                Finalizar Avaliação →
+                            </a>
+                        
+                    </div>
             </div>
         </div>
     </main>
@@ -469,18 +467,43 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
     </div>
 
     <script>
+        function cinzento(concluido){
+            concluido.classList.add('terminou')
+            while (!concluido.classList.contains('course-content')) {
+            concluido = concluido.parentElement;
+            }
+            atual = concluido.classList[1]
+            const x = document.querySelectorAll('.lesson-item')
+            x.forEach (elemento => {
+                if (elemento.id == atual)
+            {
+                elemento.classList.add('completed')
+            }
+            })
+            const y = document.querySelectorAll('.lesson-icon')
+            y.forEach (elemento =>{
+                const icone = elemento.parentElement
+                if (icone.id.includes(atual))
+            {
+                elemento.classList.add('completed')
+            }
+            })
+
+            
+
+        }
         let respostas = {}
         let questaoAtual = 1;
         let totalQuestoes = 4;
-        let tempoRestante = 15 * 60 + 30; // 15:30 em segundos
+        let tempoRestante = 15 * 60 + 30; 
 
         function selecionarOpcao(opcao) {
-            // Remove seleção anterior
+            
             document.querySelectorAll('.opcao').forEach(opt => {
                 opt.classList.remove('selecionada');
             });
             
-            // Adiciona seleção à opção clicada
+    
             opcao.classList.add('selecionada');
         }
 
@@ -545,12 +568,10 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 document.querySelector('.numero-exercicio').textContent = questaoAtual;
                 limparSelecao();
                 cartaoExercicio.style.opacity = '1';
-                console.log(respostas)
                 if (respostas[questaoAtual]){
                     const letros = document.querySelectorAll('.opcao')
                     letros.forEach(elemento => {
                         const teste = elemento.querySelector('.letra-opcao')
-                        console.log(teste.textContent)
                     if (teste.textContent == respostas[questaoAtual]) {
                         elemento.classList.add('selecionada');
                         }
@@ -559,15 +580,98 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 }
                 
                 
+                if (questaoAtual === 1) {
+                    document.querySelector('.pergunta-exercicio').innerHTML = 
+                        '<strong>O que é Estatística?</strong><br><br>'
+                    const opcoes = document.querySelector('.opcoes');
+                    const spans = opcoes.querySelectorAll('span')
+                    for (let i = 0; i < spans.length; i++)
+                {
+                    if (i==0){
+                        spans[i].innerHTML = "Uma área da matemática que estuda apenas números inteiros."
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Um conjunto de métodos para coletar, organizar, analisar e interpretar dados."
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "A ciência que cria dados para pesquisas."
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Apenas a criação de gráficos para mostrar informações."
+                    }
+                    //gabarito: BBBB
+                }
+                }
                 if (questaoAtual === 2) {
                     document.querySelector('.pergunta-exercicio').innerHTML = 
-                        '<strong>Etapas do Estudo Estatístico</strong><br><br>' +
-                        'Qual das alternativas apresenta corretamente as etapas do estudo estatístico na ordem adequada?';
+                        '<strong>Qual das opções abaixo classifica corretamente os dados?</strong><br><br>'
+                    const opcoes = document.querySelector('.opcoes');
+                    const spans = opcoes.querySelectorAll('span')
+                    for (let i = 0; i < spans.length; i++)
+                {
+                    if (i==0){
+                        spans[i].innerHTML = "Número de filhos — Quantitativo contínuo; Cor dos olhos — Qualitativo ordinal."
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Altura — Quantitativo contínuo; Classificação em uma corrida — Qualitativo ordinal."
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Cor dos olhos — Quantitativo discreto; Número de irmãos — Qualitativo nominal;"
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Classificação em uma corrida — Quantitativo contínuo; Altura — Qualitativo nominal."
+                    }
+                    //gabarito: BBBB
+                }
+                }
+                if (questaoAtual === 3) {
+                    document.querySelector('.pergunta-exercicio').innerHTML = 
+                        '<strong>Dado o conjunto de dados: 2, 4, 4, 6, 8, qual é a moda?</strong><br><br>'
+                    const opcoes = document.querySelector('.opcoes');
+                    const spans = opcoes.querySelectorAll('span')
+                    for (let i = 0; i < spans.length; i++)
+                {
+                    if (i==0){
+                        spans[i].innerHTML = "2."
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "4."
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "6."
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Não existe moda."
+                    }
+                    //gabarito: BBBB
+                }
+                }
+                if (questaoAtual === 4) {
+                    document.querySelector('.pergunta-exercicio').innerHTML = 
+                        '<strong>Você tem os dados de preferências de frutas: maçã (20), banana (30) e uva (10). Qual gráfico é mais indicado para mostrar a proporção de cada fruta?</strong><br><br>'
+                    const opcoes = document.querySelector('.opcoes');
+                    const spans = opcoes.querySelectorAll('span')
+                    for (let i = 0; i < spans.length; i++)
+                {
+                    if (i==0){
+                        spans[i].innerHTML = "Gráfico de linhas."
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Gráfico de setores (pizza)."
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Histograma."
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Pictograma."
+                    }
+                    //gabarito: BBBB
+                }
                 }
             }, 300);
         }
 
-        // Cronômetro
+        
         function atualizarCronometro() {
             const minutos = Math.floor(tempoRestante / 60);
             const segundos = tempoRestante % 60;
@@ -579,14 +683,14 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 tempoRestante--;
             } else {
                 alert('Tempo esgotado! A avaliação será finalizada automaticamente.');
-                // Finalizar avaliação automaticamente
+      
             }
         }
 
-        // Iniciar cronômetro
+    
         setInterval(atualizarCronometro, 1000);
 
-        // Animações de entrada
+       
         document.addEventListener('DOMContentLoaded', function() {
             const cartoes = document.querySelectorAll('.cartao-exercicio, .secao-progresso, .cartao-resumo');
             cartoes.forEach((cartao, indice) => {
@@ -612,9 +716,6 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                
                          elemento.classList.remove('expanded')
                          elemento.style.display = 'none'
-
-                       
-
                 }
                 )
             }
@@ -701,26 +802,9 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             }
         }
 
-        function playVideo() {
-            const videoContainer = document.querySelector('.video-container');
-            const placeholder = document.querySelector('.video-placeholder');
-            
-            // Simular carregamento do vídeo
-            placeholder.innerHTML = '<div style="color: white;">Carregando vídeo...</div>';
-            
-            setTimeout(() => {
-                placeholder.innerHTML = `
-                    <div style="color: white; text-align: center;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎬</div>
-                        <div>Vídeo: Introdução às Equações</div>
-                        <div style="font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem;">15:30 / 15:30</div>
-                        <div style="margin-top: 1rem; font-size: 0.8rem;">(Esta é uma simulação)</div>
-                    </div>
-                `;
-            }, 1500);
-        }
+        
 
-        // Simular progresso da aula
+
         function updateProgress() {
             const progressFill = document.querySelector('.progress-fill');
             const currentWidth = parseInt(progressFill.style.width);
@@ -732,9 +816,9 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             progressText.textContent = `Progresso ${newWidth}%`;
         }
 
-        // Marcar aula como concluída
+
         document.querySelector('.lesson-complete').addEventListener('click', function() {
-            this.innerHTML = '<span>✓</span>';
+
             updateProgress();
         });
 
