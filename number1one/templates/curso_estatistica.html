@@ -430,7 +430,7 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     <div class="acoes-exercicio">
                         <button class="botao botao-principal" onclick="repassarQuest()">Voltar questão</button>
                         <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
-                        <button class="botao botao-principal" onclick="proximaQuestao()">Próxima questão</button>
+                        <button class="botao botao-principal" id="final" onclick="proximaQuestao()">Próxima questão</button>
                     </div>
                 </div>
 
@@ -453,13 +453,222 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                         </div>
                     </div>
                 </div>
-                    <div class="botoes-navegacao">
-                        
-                            <a href="#" class="botao-navegacao primario">
-                                Finalizar Avaliação →
-                            </a>
-                        
+
+            </div>
+        </div>
+    </main>
+    <main class="avaliation-wrapper inativo">
+        <div class="result-header-zone">
+            <h1 class="main-title-display">Resultado da Avaliação</h1>
+            <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos da Estatística' e revise as questões com o gabarito detalhado.</p>
+            
+            <div class="lesson-metadata-row">
+                <div class="badge-metadata success-state">
+                    ✅ Aprovado
+                </div>
+                <div class="badge-metadata">
+                    📊 3/4 Acertos
+                </div>
+                <div class="badge-metadata warning-state">
+                    ⏱️ 12:45 Utilizados
+                </div>
+            </div>
+        </div>
+
+        <div class="main-body-content">
+            <div class="content-section-block">
+                <div class="results-showcase-card">
+                    <div class="grade-display-large">75%</div>
+                    <div class="outcome-status-text">Parabéns! Você foi Aprovado!</div>
+                    <div class="outcome-description-text">Você demonstrou um bom entendimento dos conceitos fundamentais da Estatística.</div>
+                </div>
+
+                <div class="stats-grid-container">
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big correct-answer">3</span>
+                        <span class="metric-label-text">Acertos</span>
                     </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big wrong-answer">1</span>
+                        <span class="metric-label-text">Erros</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big">75%</span>
+                        <span class="metric-label-text">Aproveitamento</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big">12:45</span>
+                        <span class="metric-label-text">Tempo Usado</span>
+                    </div>
+                </div>
+
+                <h2 class="section-heading-title">📝 Gabarito Detalhado</h2>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">1</div>
+                        <div class="answer-status-indicator right-answer">
+                            <svg class="status-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>O que é Estatística?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Uma área da matemática que estuda apenas números inteiros.</span>
+                        </li>
+                        <li class="choice-item-row um right-answer ">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle um">C</div>
+                            <span>A ciência que cria dados para pesquisas.</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle um">D</div>
+                            <span>Apenas a criação de gráficos para mostrar informações.</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A Estatística é realmente um conjunto de métodos científicos para coletar, organizar, analisar e interpretar dados, permitindo a compreensão de fenômenos e tomada de decisões baseadas em evidências.
+                    </div>
+                </div>
+
+                <div class="answer-key-item wrong-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle wrong-answer">2</div>
+                        <div class="answer-status-indicator wrong-answer">
+                            <svg class="status-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            Resposta Incorreta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Qual é a primeira etapa do estudo estatístico?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row ">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Coleta de dados</span>
+                        </li>
+                        <li class="choice-item-row right-answer">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Organização dos dados</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Análise dos dados</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Interpretação dos resultados</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A primeira etapa do estudo estatístico é a <strong>coleta de dados</strong>. Antes de organizar, analisar ou interpretar, é necessário primeiro obter as informações através de pesquisas, questionários ou outras fontes confiáveis.
+                    </div>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">3</div>
+                        <div class="answer-status-indicator right-answer">
+                            <svg class="status-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Qual tipo de gráfico é mais adequado para mostrar a evolução de dados ao longo do tempo?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Gráfico de barras</span>
+                        </li>
+                        <li class="choice-item-row right-answer">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Gráfico de linhas</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Gráfico de setores</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Histograma</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> O gráfico de linhas é ideal para mostrar a evolução ou mudança de dados ao longo do tempo, pois conecta os pontos de dados em sequência temporal, facilitando a visualização de tendências e padrões.
+                    </div>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">4</div>
+                        <div class="answer-status-indicator right-answer">
+                            <svg class="status-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Por que é importante interpretar estatísticas com cuidado?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Porque números sempre mentem</span>
+                        </li>
+                        <li class="choice-item-row right-answer">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Para fazer gráficos mais bonitos</span>
+                        </li>
+                        <li class="choice-item-row  user-selected">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Para evitar conclusões falsas e tomar decisões adequadas</span>
+                        </li>
+                        <li class="choice-item-row">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Porque a matemática é difícil</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A interpretação cuidadosa das estatísticas é fundamental para evitar conclusões falsas, identificar possíveis vieses nos dados e tomar decisões bem fundamentadas. Uma análise superficial pode levar a equívocos importantes.
+                    </div>
+                </div>
+
+                <div class="navigation-buttons-row">
+                    <button class="nav-button-element secondary-style" onclick="backToLesson()">
+                        ← Revisar Conteúdo
+                    </button>
+                    <button class="nav-button-element primary-style" onclick="nextStage()">
+                        Continuar Curso →
+                    </button>
+                </div>
+
             </div>
         </div>
     </main>
@@ -534,8 +743,40 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             } else {
                 if (confirm('Tem certeza que deseja finalizar a avaliação?')) {
                     alert('Avaliação finalizada! Redirecionando para os resultados...');
+                    gabarito()
                 }
             }
+        }
+        function constarRespostas(){
+            const um = respostas[1]
+            const dois = respostas[2]
+            const tres = respostas[3]
+            const quatro = respostas[4]
+            const quests = document.querySelectorAll('.choice-item-row.um')
+            const crt = document.querySelector('.choice-item-row.right-answer')
+            txt = crt.firstElementChild.textContent
+            quests.forEach( elemento =>{
+                if (elemento.contains('right-answer') && txt==um) {}
+                else {
+                    console.log(elemento.firstElementChild.textContent)
+                }
+                
+        
+            })
+            
+
+        }
+
+        function gabarito() {
+            prova = document.querySelector('.corpo-conteudo')
+            prova.classList.add('inativo')
+            const teudo = document.querySelector(".course-content."+CSS.escape("1_3"));
+            teudo.classList.add('inativo')
+            const certos = document.querySelector('.avaliation-wrapper')
+            certos.classList.remove('inativo')
+            constarRespostas()
+
+
         }
         function repassarQuest() {
             const selecionada = document.querySelector('.opcao.selecionada');
@@ -643,7 +884,8 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     if (i==3){
                         spans[i].innerHTML = "Não existe moda."
                     }
-                    //gabarito: BBBB
+                    const proximo = document.querySelector('button.botao-principal#final');
+                    proximo.innerHTML = "Próxima questão"
                 }
                 }
                 if (questaoAtual === 4) {
@@ -665,7 +907,8 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     if (i==3){
                         spans[i].innerHTML = "Pictograma."
                     }
-                    //gabarito: BBBB
+                    const proximo = document.querySelector('button.botao-principal#final');
+                    proximo.innerHTML = "Finalizar"
                 }
                 }
             }, 300);
