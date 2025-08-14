@@ -543,14 +543,14 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     </div>
                 </div>
 
-                <div class="answer-key-item wrong-answer">
+                <div class="answer-key-item right-answer">
                     <div class="question-header-area">
-                        <div class="question-number-circle wrong-answer">2</div>
-                        <div class="answer-status-indicator wrong-answer">
+                        <div class="question-number-circle right-answer">2</div>
+                        <div class="answer-status-indicator right-answer">
                             <svg class="status-icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
-                            Resposta Incorreta
+                            Resposta Correta
                         </div>
                     </div>
                     
@@ -563,15 +563,15 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                             <div class="choice-letter-circle">A</div>
                             <span>Coleta de dados</span>
                         </li>
-                        <li class="choice-item-row doisright-answer">
+                        <li class="choice-item-row dois right-answer">
                             <div class="choice-letter-circle">B</div>
                             <span>Organização dos dados</span>
                         </li>
-                        <li class="choice-item-row">
+                        <li class="choice-item-row dois">
                             <div class="choice-letter-circle">C</div>
                             <span>Análise dos dados</span>
                         </li>
-                        <li class="choice-item-row">
+                        <li class="choice-item-row dois">
                             <div class="choice-letter-circle">D</div>
                             <span>Interpretação dos resultados</span>
                         </li>
@@ -747,69 +747,44 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 }
             }
         }
+        function verify(quests,marcado,n,crt)
+        {
+            quests.forEach( elemento =>{
+                alternativa = elemento.firstElementChild.textContent
+                txt = crt[n].firstElementChild.textContent
+                if (txt==marcado) {} else {
+                    if (alternativa==marcado)
+                {
+                    elemento.classList.add('wrong-answer')
+                    aba = document.querySelectorAll('.answer-key-item')
+                    aba[n].classList.remove('right-answer')
+                    aba[n].classList.add('wrong-answer')
+                    kestao = document.querySelectorAll('.question-number-circle')
+                    kestao[n].classList.remove('right-answer')
+                    kestao[n].classList.add('wrong-answer')
+                    ultimo = document.querySelectorAll('.answer-key-item .answer-status-indicator svg.status-icon-svg path');
+                    ultimo[n].setAttribute('d', 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z');
+                    acertouSera = document.querySelectorAll('.answer-status-indicator')
+                    acertouSera[n].classList.remove('right-answer')
+                    acertouSera[n].classList.add('wrong-answer')
+                    acertouSera[n].innerHTML = "Resposta Incorreta"
+                }
+                }}
+            )
+        }
         function constarRespostas(){
             const um = respostas[1]
             const dois = respostas[2]
             const tres = respostas[3]
             const quatro = respostas[4]
-            const quests = document.querySelectorAll('.choice-item-row.um')
-            const crt = document.querySelector('.choice-item-row.right-answer')
-            txt = crt.firstElementChild.textContent
-            quests.forEach( elemento =>{
-                alternativa = elemento.firstElementChild.textContent
-                if (txt==um) {} else {
-                    if (alternativa==um)
-                {
-                    elemento.classList.add('wrong-answer')
-                    aba = document.querySelector[1]('.answer-key-item')
-                    console.log(aba)
-                    aba.classList.remove('right-answer')
-                    aba.classList.add('wrong-answer')
-                    kestao = document.querySelector('.question-number-circle')
-                    console.log(kestao)
-                    kestao.classList.remove('right-answer')
-                    kestao.classList.add('wrong-answer')
-                    ultimo = document.querySelector('.answer-key-item .answer-status-indicator svg.status-icon-svg path');
-                    ultimo.setAttribute('d', 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z');
-                    acertouSera = document.querySelector('.answer-status-indicator')
-                    acertouSera.classList.remove('right-answer')
-                    acertouSera.classList.add('wrong-answer')
-                    acertouSera.innerHTML = "Resposta Incorreta"
-                }
-                }}
-            )
-                
-        
-        
-             const quests2 = document.querySelectorAll('.choice-item-row.dois')
-             const crt2 = document.querySelector('.choice-item-row.right-answer')
-            txt = crt2.firstElementChild.textContent
-            quests2.forEach( elemento =>{
-                alternativa = elemento.firstElementChild.textContent
-                if (txt==um) {} else {
-                    if (alternativa==um)
-                {
-                    elemento.classList.add('wrong-answer')
-                    aba = document.querySelectorAll('.answer-key-item')
-                    aba[1].classList.remove('right-answer')
-                    aba[1].classList.add('wrong-answer')
-                    kestao = document.querySelectorAll('.question-number-circle')
-                    kestao[1].classList.remove('right-answer')
-                    kestao[1].classList.add('wrong-answer')
-                    ultimo = document.querySelectorAll('.answer-key-item .answer-status-indicator svg.status-icon-svg path');
-                    ultimo[1].setAttribute('d', 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z');
-                    acertouSera = document.querySelectorAll('.answer-status-indicator')
-                    acertouSera[1].classList.remove('right-answer')
-                    acertouSera[1].classList.add('wrong-answer')
-                    acertouSera[1].innerHTML = "Resposta Incorreta"
-                }
-                }
-                
-        
-        }
-    
-    
-    )
+            const quests1 = document.querySelectorAll('.choice-item-row.um')
+            const crt1 = document.querySelectorAll('.choice-item-row.right-answer')
+            verify(quests1,um,0,crt1)
+
+            const quests2 = document.querySelectorAll('.choice-item-row.dois')
+            verify(quests2,dois,1,crt1)
+   
+
 }
 
         function gabarito() {
