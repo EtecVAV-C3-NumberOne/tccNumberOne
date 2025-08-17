@@ -447,10 +447,7 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                             <span class="numero-estatistica">3</span>
                             <span class="rotulo-estatistica">Restantes</span>
                         </div>
-                        <div class="estatistica">
-                            <span class="numero-estatistica">15:30</span>
-                            <span class="rotulo-estatistica">Tempo Restante</span>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -463,14 +460,9 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos da Estatística' e revise as questões com o gabarito detalhado.</p>
             
             <div class="lesson-metadata-row">
-                <div class="badge-metadata success-state">
-                    ✅ Aprovado
+                <div class="badge-metadata back">    
                 </div>
-                <div class="badge-metadata">
-                    📊 3/4 Acertos
-                </div>
-                <div class="badge-metadata warning-state">
-                    ⏱️ 12:45 Utilizados
+                <div class="badge-metadata feed">
                 </div>
             </div>
         </div>
@@ -478,28 +470,25 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
         <div class="main-body-content">
             <div class="content-section-block">
                 <div class="results-showcase-card">
-                    <div class="grade-display-large">75%</div>
-                    <div class="outcome-status-text">Parabéns! Você foi Aprovado!</div>
-                    <div class="outcome-description-text">Você demonstrou um bom entendimento dos conceitos fundamentais da Estatística.</div>
+                    <div class="grade-display-large"></div>
+                    <div class="outcome-status-text"></div>
+                    <div class="outcome-description-text"></div>
                 </div>
 
                 <div class="stats-grid-container">
                     <div class="metric-display-card">
-                        <span class="statistic-number-big correct-answer">3</span>
+                        <span class="statistic-number-big correct-answer"></span>
                         <span class="metric-label-text">Acertos</span>
                     </div>
                     <div class="metric-display-card">
-                        <span class="statistic-number-big wrong-answer">1</span>
+                        <span class="statistic-number-big wrong-answer"></span>
                         <span class="metric-label-text">Erros</span>
                     </div>
                     <div class="metric-display-card">
-                        <span class="statistic-number-big">75%</span>
+                        <span class="statistic-number-big porcentagi">75%</span>
                         <span class="metric-label-text">Aproveitamento</span>
                     </div>
-                    <div class="metric-display-card">
-                        <span class="statistic-number-big">12:45</span>
-                        <span class="metric-label-text">Tempo Usado</span>
-                    </div>
+                    
                 </div>
 
                 <h2 class="section-heading-title">📝 Gabarito Detalhado</h2>
@@ -553,11 +542,11 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     </div>
 
                     <ul class="choices-list-container">
-                        <li class="choice-item-row dois">
+                        <li class="choice-item-row dois right-answer">
                             <div class="choice-letter-circle">A</div>
                             <span>Coleta de dados</span>
                         </li>
-                        <li class="choice-item-row dois right-answer">
+                        <li class="choice-item-row dois">
                             <div class="choice-letter-circle">B</div>
                             <span>Organização dos dados</span>
                         </li>
@@ -578,7 +567,7 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
 
                 <div class="answer-key-item right-answer">
                     <div class="question-header-area">
-                        <div class="question-number-circle right-answer">2</div>
+                        <div class="question-number-circle right-answer">3</div>
                         <div class="answer-status-indicator right-answer">
                             Resposta Correta
                         </div>
@@ -629,11 +618,11 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                             <div class="choice-letter-circle">A</div>
                             <span>Porque números sempre mentem</span>
                         </li>
-                        <li class="choice-item-row quatro right-answer">
+                        <li class="choice-item-row quatro">
                             <div class="choice-letter-circle">B</div>
                             <span>Para fazer gráficos mais bonitos</span>
                         </li>
-                        <li class="choice-item-row quatro">
+                        <li class="choice-item-row quatro right-answer">
                             <div class="choice-letter-circle">C</div>
                             <span>Para evitar conclusões falsas e tomar decisões adequadas</span>
                         </li>
@@ -681,9 +670,11 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
 
         }
         let respostas = {}
+        let correcao = {1: 'B', 2: 'A', 3: 'B', 4: 'C'}
         let questaoAtual = 1;
         let totalQuestoes = 4;
-        let tempoRestante = 15 * 60 + 30; 
+        let acertosAvaliacao = 0
+        let errosAvaliacao = 0
 
         function selecionarOpcao(opcao) {
             
@@ -768,9 +759,40 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
 
             const quests4 = document.querySelectorAll('.choice-item-row.quatro')
             verify(quests4,quatro,3,crt1)
-   
-
 }
+        function constarEstatisticas(reposta,corretos,questoes){
+            for (let i = 1; i <= questoes; i++) {
+                    if (reposta[i]==corretos[i]){
+                        acertosAvaliacao+=1
+                    }
+                }
+            errosAvaliacao = questoes - acertosAvaliacao
+            document.querySelector('span.statistic-number-big.correct-answer').innerHTML = acertosAvaliacao;
+            document.querySelector('span.statistic-number-big.wrong-answer').innerHTML = errosAvaliacao;
+            let Aproveitamento = (acertosAvaliacao * 100)/ questoes
+            document.querySelector('span.statistic-number-big.porcentagi').innerHTML = Math.floor(Aproveitamento) + "%"
+            document.querySelector('.grade-display-large').innerHTML = Math.floor(Aproveitamento) + "%"
+            document.querySelector('.badge-metadata.feed').innerHTML = "📊 "+ acertosAvaliacao + "/" + questoes + " Acertos"
+            const icone = document.querySelector('.badge-metadata.back')
+            if (Aproveitamento > 74)
+            {
+                
+                icone.innerHTML = "✅ Aprovado"
+                icone.classList.add('sucess-state')
+                document.querySelector('.outcome-status-text').innerHTML = "Parabéns! Você foi Aprovado!"
+                document.querySelector('.outcome-description-text').innerHTML = "Você demonstrou um bom entendimento dos conceitos apresentados nesse módulo."
+            }
+            else {
+                
+                icone.innerHTML = "❌ Reprovado"
+                icone.classList.add('warning-state')
+                document.querySelector('.outcome-status-text').innerHTML = "Você foi reprovado."
+                document.querySelector('.outcome-description-text').innerHTML = "Revise as aulas do módulo e volte para reavaliar suas competências, por enquanto, insuficientes."
+                document.querySelector('.results-showcase-card').classList.add('failed-status')
+            }
+
+
+        }
 
         function gabarito() {
             prova = document.querySelector('.corpo-conteudo')
@@ -779,7 +801,8 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             teudo.classList.add('inativo')
             const certos = document.querySelector('.avaliation-wrapper')
             certos.classList.remove('inativo')
-            constarRespostas()
+            constarRespostas();
+            constarEstatisticas(respostas,correcao,4)
 
 
         }
@@ -918,25 +941,6 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 }
             }, 300);
         }
-
-        
-        function atualizarCronometro() {
-            const minutos = Math.floor(tempoRestante / 60);
-            const segundos = tempoRestante % 60;
-            const exibicaoCronometro = document.querySelector('.estatisticas-resumo .estatistica:last-child .numero-estatistica');
-            
-            exibicaoCronometro.textContent = `${minutos}:${segundos.toString().padStart(2, '0')}`;
-            
-            if (tempoRestante > 0) {
-                tempoRestante--;
-            } else {
-                alert('Tempo esgotado! A avaliação será finalizada automaticamente.');
-      
-            }
-        }
-
-    
-        setInterval(atualizarCronometro, 1000);
 
        
         document.addEventListener('DOMContentLoaded', function() {

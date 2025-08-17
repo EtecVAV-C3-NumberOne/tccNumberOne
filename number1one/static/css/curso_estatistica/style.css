@@ -868,7 +868,7 @@ body {
 
         .estatisticas-resumo {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -1038,7 +1038,7 @@ body {
 
 .badge-metadata.warning-state {
     background: #fef3c7;
-    color: #d97706;
+    color: #f01616;
 }
 
 .main-body-content {
