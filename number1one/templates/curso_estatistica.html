@@ -873,44 +873,44 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 }
                 if (questaoAtual === 2) {
                     document.querySelector('.pergunta-exercicio').innerHTML = 
-                        '<strong>Qual das opções abaixo classifica corretamente os dados?</strong><br><br>'
+                        '<strong>Qual é a primeira etapa do estudo estatístico?</strong><br><br>'
                     const opcoes = document.querySelector('.opcoes');
                     const spans = opcoes.querySelectorAll('span')
                     for (let i = 0; i < spans.length; i++)
                 {
                     if (i==0){
-                        spans[i].innerHTML = "Número de filhos — Quantitativo contínuo; Cor dos olhos — Qualitativo ordinal."
+                        spans[i].innerHTML = "Coleta de dados."
                     }
                     if (i==1){
-                        spans[i].innerHTML = "Altura — Quantitativo contínuo; Classificação em uma corrida — Qualitativo ordinal."
+                        spans[i].innerHTML = "Organização dos dados."
                     }
                     if (i==2){
-                        spans[i].innerHTML = "Cor dos olhos — Quantitativo discreto; Número de irmãos — Qualitativo nominal;"
+                        spans[i].innerHTML = "Análise dos dados."
                     }
                     if (i==3){
-                        spans[i].innerHTML = "Classificação em uma corrida — Quantitativo contínuo; Altura — Qualitativo nominal."
+                        spans[i].innerHTML = "Interpretação dos resultados."
                     }
                     //gabarito: BBBB
                 }
                 }
                 if (questaoAtual === 3) {
                     document.querySelector('.pergunta-exercicio').innerHTML = 
-                        '<strong>Dado o conjunto de dados: 2, 4, 4, 6, 8, qual é a moda?</strong><br><br>'
+                        '<strong>Qual tipo de gráfico é mais adequado para mostrar a evolução de dados ao longo do tempo?</strong><br><br>'
                     const opcoes = document.querySelector('.opcoes');
                     const spans = opcoes.querySelectorAll('span')
                     for (let i = 0; i < spans.length; i++)
                 {
                     if (i==0){
-                        spans[i].innerHTML = "2."
+                        spans[i].innerHTML = "Gráfico de barras."
                     }
                     if (i==1){
-                        spans[i].innerHTML = "4."
+                        spans[i].innerHTML = "Gráfico de linhas."
                     }
                     if (i==2){
-                        spans[i].innerHTML = "6."
+                        spans[i].innerHTML = "Gráfico de setores."
                     }
                     if (i==3){
-                        spans[i].innerHTML = "Não existe moda."
+                        spans[i].innerHTML = "Histograma."
                     }
                     const proximo = document.querySelector('button.botao-principal#final');
                     proximo.innerHTML = "Próxima questão"
@@ -918,22 +918,22 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                 }
                 if (questaoAtual === 4) {
                     document.querySelector('.pergunta-exercicio').innerHTML = 
-                        '<strong>Você tem os dados de preferências de frutas: maçã (20), banana (30) e uva (10). Qual gráfico é mais indicado para mostrar a proporção de cada fruta?</strong><br><br>'
+                        '<strong>Por que é importante interpretar estatísticas com cuidado?</strong><br><br>'
                     const opcoes = document.querySelector('.opcoes');
                     const spans = opcoes.querySelectorAll('span')
                     for (let i = 0; i < spans.length; i++)
                 {
                     if (i==0){
-                        spans[i].innerHTML = "Gráfico de linhas."
+                        spans[i].innerHTML = "Porque números sempre mentem."
                     }
                     if (i==1){
-                        spans[i].innerHTML = "Gráfico de setores (pizza)."
+                        spans[i].innerHTML = "Para fazer gráficos mais bonitos."
                     }
                     if (i==2){
-                        spans[i].innerHTML = "Histograma."
+                        spans[i].innerHTML = "Para evitar conclusões falsas e tomar decisões adequadas."
                     }
                     if (i==3){
-                        spans[i].innerHTML = "Pictograma."
+                        spans[i].innerHTML = "Porque a matemática é difícil."
                     }
                     const proximo = document.querySelector('button.botao-principal#final');
                     proximo.innerHTML = "Finalizar"
