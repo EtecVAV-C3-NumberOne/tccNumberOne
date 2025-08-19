@@ -9,9 +9,12 @@ def load_usuario(user_id):
 
 
 class Usuario(db.Model, UserMixin):
+
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String, unique=True, nullable=False)
     user_email = db.Column(db.String, unique=True, nullable=False)
     user_password = db.Column(db.String, nullable=False)
     user_function = db.Column(db.String, default='Guest')
+
+
     

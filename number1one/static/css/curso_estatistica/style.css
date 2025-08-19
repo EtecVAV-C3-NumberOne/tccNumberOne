@@ -3,7 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+#DadoEst {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: #475569;
+    gap: 1.5rem;
+}
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #f8fafc;
