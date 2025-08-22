@@ -157,6 +157,12 @@ function cinzento(concluido){
             certos.classList.remove('inativo')
             constarRespostas();
             constarEstatisticas(respostas,correcao,4)
+            const tudo = document.querySelectorAll('.module-header')
+            tudo.forEach(elemento =>
+                {
+                    elemento.classList.remove('desativado')}
+                
+                )
 
 
         }
