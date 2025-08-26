@@ -19,10 +19,12 @@ function cinzento(concluido){
                 elemento.classList.add('completed')
             }
             })
-
-            
-
         }
+
+        function voltarAoTopo() {
+            window.scrollTo({ top: 0});
+        }
+        
         let respostas = {}
         let correcao = {1: 'B', 2: 'A', 3: 'B', 4: 'C'}
         let questaoAtual = 1;
@@ -149,6 +151,7 @@ function cinzento(concluido){
         }
 
         function gabarito() {
+            voltarAoTopo()
             prova = document.querySelector('.corpo-conteudo')
             prova.classList.add('inativo')
             const teudo = document.querySelector(".course-content."+CSS.escape("1_3"));
@@ -311,6 +314,7 @@ function cinzento(concluido){
         });
 
             function ativarEx(botao) {
+                voltarAoTopo()
                 prova = document.querySelector('.corpo-conteudo')
                 prova.classList.remove('inativo')
                 botao.classList.add('inativo')
@@ -333,6 +337,7 @@ function cinzento(concluido){
             }
 
             function diminuir(botao) {
+                voltarAoTopo()
                 const main = botao.closest("main")
                 const teudo = (main.classList[1])
                 let tema = +teudo[2] - 1;
@@ -350,6 +355,7 @@ function cinzento(concluido){
             }
 
             function aumentar(botao) {
+                voltarAoTopo()
                 const main = botao.closest("main")
                 const teudo = (main.classList[1])
                 let tema = +teudo[2] + 1;
@@ -368,6 +374,9 @@ function cinzento(concluido){
 
 
             function toggleItem(lesson) {
+                voltarAoTopo()
+                prova = document.querySelector('.avaliation-wrapper')
+                if (!prova.classList.contains('inativo')) {prova.classList.add('inativo')} 
                 const filhos = document.querySelectorAll('.lesson-item')
           
                 let ativacao = false;
