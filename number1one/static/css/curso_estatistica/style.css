@@ -21,13 +21,14 @@ body {
 
 /* Header do Curso */
 .course-header {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-    color: white;
+    background: linear-gradient(#ffa845 0%, #f97316 100%);
+    color: #fff;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .desativado {
     pointer-events: none !important;
@@ -190,7 +191,7 @@ body {
 .module-header {
     padding: 1rem 1.5rem;
     background: #f8fafc;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #f97316;
     font-weight: 600;
     color: #334155;
     cursor: pointer;
@@ -206,7 +207,7 @@ body {
 
 .module-header.active {
     background: #eff6ff;
-    color: #2563eb;
+    color: #f97316;
 }
 
 .module-toggle {
@@ -244,8 +245,8 @@ body {
 
 .lesson-item.active {
     background: #eff6ff;
-    border-left-color: #2563eb;
-    color: #2563eb;
+    border-left-color: #f97316;
+    color: #f97316;
     font-weight: 500;
 }
 
@@ -265,10 +266,7 @@ body {
     flex-shrink: 0;
 }
 
-.lesson-icon.video {
-    background: #ddd6fe;
-    color: #7c3aed;
-}
+
 
 .lesson-icon.exercise {
     background: #fef3c7;
@@ -336,54 +334,6 @@ body {
     padding: 2rem;
 }
 
-.video-container {
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    position: relative;
-    aspect-ratio: 16/9;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.video-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-}
-
-.play-button {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.play-button:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
-
-.play-icon {
-    width: 0;
-    height: 0;
-    border-left: 20px solid white;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    margin-left: 4px;
-}
 
 .lesson-content {
     max-width: 800px;
@@ -410,9 +360,9 @@ body {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
-    border: 1px solid #bfdbfe;
-    border-left: 4px solid #2563eb;
+    background: linear-gradient(#fff3e3 0%, #ffe7cb 100%);
+    border: 1px solid #fac990;
+    border-left: 4px solid #f97316;
     padding: 1.5rem;
     border-radius: 8px;
     margin: 1.5rem 0;
@@ -420,7 +370,7 @@ body {
 
 .highlight-title {
     font-weight: 600;
-    color: #1e40af;
+    color: #e77422;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -429,7 +379,7 @@ body {
 
 .code-block {
     background: #1e293b;
-    color: #e2e8f0;
+    color: #f0e9e2;
     padding: 1.5rem;
     border-radius: 8px;
     font-family: 'Monaco', 'Menlo', monospace;
