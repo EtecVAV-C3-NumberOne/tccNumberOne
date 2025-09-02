@@ -1,6 +1,6 @@
 from flask import render_template, url_for, redirect
 from number1one import app, bcrypt, db, login_manager
-from number1one.models import Usuario
+from number1one.models import Usuario, Curso, Materia, Progresso
 from flask_login import login_required, login_user, logout_user, current_user
 from number1one.forms import LoginForm, RegisterForm
 from werkzeug.utils import secure_filename
@@ -71,4 +71,18 @@ def home():
 @app.route('/estatistica')
 @login_required
 def estatistica():
+    progresso = Progresso.query.filter_by(usuario_id=current_user.id, aula_id=aula_id).first()
+
     return render_template('curso_estatistica.html')
+
+
+def atualizar_progresso(aula_id, novo_valor):
+    progresso = Progresso.query.filter_by(usuario_id=current_user.id, aula_id=aula_id).first()
+    
+    if not progresso:
+        progresso = Progresso(usuario_id=current_user.id, aula_id=aula_id, progresso=novo_valor)
+        db.session.add(progresso)
+    else:
+        progresso.progresso = novo_valor
+    
+    db.session.commit()

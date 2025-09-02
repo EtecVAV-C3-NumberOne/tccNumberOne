@@ -14,7 +14,38 @@ class Usuario(db.Model, UserMixin):
     user_name = db.Column(db.String, unique=True, nullable=False)
     user_email = db.Column(db.String, unique=True, nullable=False)
     user_password = db.Column(db.String, nullable=False)
-    user_function = db.Column(db.String, default='Guest')
+    user_function = db.Column(db.String, default='user')
+    
+    progresso = db.relationship('Progresso', backref='usuario', lazy=True)
+
+class Curso(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    curso = db.Column(db.String, unique=True, nullable = False)
+
+    materias = db.relationship('Materia', backref='curso', lazy=True)
+
+class Materia(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    materia = db.Column(db.String, unique=True, nullable = False)
+    curso_id = db.Column(db.Integer, db.ForeignKey('curso.id'), nullable = False)
+    
+
+class Aula(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    aula = db.Column(db.String, unique=True, nullable = False)
+    materia_id = db.Column(db.Integer, db.ForeignKey('materia.id'), nullable = False)
+
+    progresso = db.relationship('Progresso', backref='aula', lazy=True)
 
 
+class Progresso(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
+    aula_id = db.Column(db.Integer, db.ForeignKey('aula.id'), nullable=False)
+
+    concluida = db.Column(db.Boolean, nullable=False, default=0.0) # 0 ou 1
     
