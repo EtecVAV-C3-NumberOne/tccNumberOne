@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/curso_' ~ nome_formatado ~ '/style.css') }}">
+    <title>{{ curso.curso }} - NumberOne</title>
+</head>
+<body>
+    <!-- Header do Curso -->
+    <header class="course-header">
+        <nav class="header-nav">
+            <div class="logo-section">
+                <a href="/" class="logo"><img src="{{ url_for('static', filename='assets/logo4.png') }}" alt=""></a>
+                <div class="course-breadcrumb">
+                    <span>Cursos</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="course">{{ curso.curso }}</span>
+                </div>
+            </div>
+            
+            <div class="user-section">
+                <div class="progress-indicator">
+                    <span>Progresso {{ progresso }}%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ progresso }}%"></div>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        {{ current_user.user_name[:2]|upper }}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="course-layout">
+        <!-- Sidebar de Navegação -->
+        <aside class="course-sidebar">
+            <div class="sidebar-header">
+                <h2 class="course-title">{{ curso.curso }}</h2>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <span>📊</span>
+                        <span>Iniciante</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️</span>
+                        <span>20h</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🎓</span>
+                        <span>{{ concluidas|length }}/{{ total_aulas }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                {% for materia in materias %}
+                <div class="module">
+                    <div class="module-header {% if aula_atual in materia.aulas_ids %}active{% endif %}" onclick="toggleModule(this)">
+                         <span>{{ loop.index }}. {{ materia.materia }}</span>
+                        <span class="module-toggle {% if aula_atual in materia.aulas_ids %}expanded{% endif %}">▶</span>
+                    </div>
+                    
+                    <div class="lesson-list {% if aula_atual in materia.aulas_ids %}expanded{% endif %}">
+                        {% for aula in materia.aulas_list %}
+                        <div class="lesson-item 
+                                    {% if aula.id in concluidas %}completed{% endif %}
+                                    {% if aula.id == aula_atual %}active{% endif %}" 
+                        data-aula-id="{{ aula.id }}" 
+                        onclick="toggleItem(this)">
+                            <div class="lesson-icon">
+                                {% if 'exercicio' in aula.aula.lower() or 'avaliação' in aula.aula.lower() %}📝{% else %}📖{% endif %}
+                            </div>
+                            <span>{{ aula.aula }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </aside>
+
+        <!-- Conteúdo Específico do Curso -->
+        {% block curso_content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/curso_base.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/curso_' ~ nome_formatado ~ '.js') }}"></script>
+</body>
+</html>

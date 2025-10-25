@@ -1,0 +1,553 @@
+{% extends "curso_base.html" %}
+
+{% block curso_content %}
+    <!-- Aula 1 (conteúdo normal) -->
+    <main id="aula-1" class="course-content {% if aula_atual != 1 %}inativo{% endif %}">
+        <div class="content-header">
+                <h1 class="content-title">Introdução à Estatística</h1>
+                <p class="content-description">
+                    Aprenda os conceitos fundamentais da Estatística e suas devidas implicações.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Iniciante</span>
+                    </div>
+                </div>
+            </div>    
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. 📌 O que é Estatística? </h2>
+                        <p class="content-text">
+                            A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dados para compreender fenômenos e ajudar na tomada de decisões.
+Ela é usada em praticamente tudo: pesquisas de opinião, estudos científicos, controle de produção, economia, esportes e muito mais.<br><br>
+Por meio de métodos estatísticos, é possível resumir grandes volumes de informações em gráficos, tabelas e medidas como média, mediana e moda, facilitando a visualização e compreensão dos dados.<br><br>
+Além disso, a Estatística permite fazer previsões, identificar padrões e verificar a confiabilidade de resultados, sendo essencial em contextos que envolvem incertezas ou variabilidade.<br>
+                        </p>
+                        <h2 class="section-title">2. 🔍 Etapas do Estudo Estatístico </h2>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Coleta de dados:</strong> obter informações através de pesquisas ou fontes alternativas;</li> 
+                            <li><strong>Organização dos dados:</strong> colocar os dados em tabelas, listas, gráficos para facilitar a leitura; </li> 
+                            <li><strong>Análise dos dados:</strong> calcular medidas estatísticas e identificar padrões; </li> 
+                            <li><strong>Interpretação e conclusão:</strong> apuração e demonstração dos resultados finais obtidos.</li> 
+                        </ul>
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <span>💡</span>
+                                <span>Observação Importante</span>
+                            </div>
+                            <p>A veracidade não está intrínseca nas estatísticas, ou seja, elas podem ser verdadeiras ou não. Visando informação e conhecimentos válidos, é necessário checar a validade das informações utilizadas na estatística.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">3. 📑 Tipos de Dados </h2>
+                        <p class="content-text">
+                            Os dados podem ser classificados de duas formas: 
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Quantitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Discretos:</strong> valores inteiros contáveis (ex.: número de filhos).</li>
+                                <li><strong>Contínuos:</strong> valores que podem ser fracionários (ex.: altura, peso). </li>
+                            </ul>
+                            <li><strong>Qualitativos</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li><strong>Nominais:</strong> sem ordem lógica (ex.: cor dos olhos, sexo). </li>
+                                <li><strong>Ordinais:</strong> têm ordem (ex.: classificação em 1º, 2º, 3º lugar). </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">  
+                <button class="nav-button secondary invisivel" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+                
+            <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
+            <input type="hidden" name="aula_id" value=1>
+            {% if aula_atual not in concluidas %}
+                <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
+            {% else %}
+                <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
+            {% endif %}
+            </form>
+                <button  class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+
+    </main>
+
+    <!-- Aula 2 (conteúdo normal) -->
+    <main id="aula-2" class="course-content {% if aula_atual != 2 %}inativo{% endif %}">
+        <div class="content-header">
+                <h1 class="content-title">Conceituação teórica</h1>
+                <p class="content-description">
+                    Aprofundamento nos conceitos básicos de Estatística e sua aplicação prática.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Intermediário</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. 📏 Medidas Estatísticas Fundamentais </h2>
+                        <p class="content-text">
+                            Amplamente usados nas estatísticas, os seguintes conceitos são de suma importância para interpretação e aplicação plena dos dados coletados, possibilitando conclusões lógicas e realistas.
+                            Exemplos:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Média Aritmética</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>Soma de todos os valores dividida pelo número de elementos</li>
+                                <li>x + y + z+ ... / w</li>
+                                <ul style="padding-left: 5%;">
+                                    
+                                    <li>w = quantidade de valores</li>
+                                    <li>x,y,z = valores (exemplificação)</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Mediana</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que divide o conjunto ao meio quando ele está em ordem crescente.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Se o número de valores for ímpar, a mediana é o valor que se encontra entre duas metades iguais do conjunto, considerando a menor divisão possível.</li>
+                                    <li>Se o número de valores for par, a mediana é a média dos dois valores encontrados entre duas metades iguais do conjunto, considerando a menor divisão possível e diferente de zero.</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Moda</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que mais se repete dentro do conjunto.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
+                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <li><strong>Moda</strong></li>
+                            <ul style="padding-left: 5%;">
+                                <li>O valor que mais se repete dentro do conjunto.</li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
+                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-title">2. 📋 Tabelas Estatísticas </h2>
+                        <p class="content-text">
+                            Tabelas são um elemento comumente usado na exposição de dados, dada a praticidade de seus elementos visuais e como os organiza. Dentre a composição das tabelas, estão:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Título:</strong> Indica o assunto da tabela.</li>
+                            <li><strong>Cabeçalho:</strong> Nomes das colunas.</li>
+                            <li><strong>Corpo:</strong> Onde os dados estão dispostos.</li>
+                            <li><strong>Fonte:</strong> Origem dos dados.</li>
+                        </ul>
+                        <br>
+                        <p class="content-text">
+                            Tabelas de frequência são um subtipo das tabelas estatísticas e tem isso e isso e isso
+                        </p>
+                        <h2 class="section-title">3. 📊 Tipos de Gráficos </h2>
+                        <p class="content-text">
+                            (Explicação detalhada sobre gráficos)
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Gráficos de colunas/barras</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Barras verticais ou horizontais</li>
+                                    <li>Usado para comparar valores</li>
+                                </ul>
+                            <li><strong>Gráfico de linhas</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Pontos ligados por linhas.</li>
+                                    <li>Usado para mostrar evolução ao longo do tempo.</li>
+                                </ul>
+                            <li><strong>Gráfico de setores</strong></li>
+                                <ul style="padding-left: 5%;">
+                                    <li>Representa proporções em um círculo.</li>
+                                    <li>Cada “fatia” representa uma parte do total.</li>
+                                </ul>
+                            <li><strong>Histograma</strong></li>
+                            <ul style="padding-left: 5%;">
+                                    <li>Gráfico de barras coladas. </li>
+                                    <li>Usado para dados contínuos agrupados em intervalos.</li>
+                                </ul>
+                            <li><strong>Pictograma</strong></li>
+                            <ul style="padding-left: 5%;">
+                                    <li>Usa figuras ou símbolos para representar quantidades.</li>  
+                                </ul>
+                        </ul>
+                        <h2 class="section-title">4. 🧠 Medidas de dispersão </h2>
+                        <p class="content-text">
+                            As medidas de dispersão indicam quanto os valores de um conjunto se afastam da média. Elas mostram a concentração (pouca variação) ou dispersão (grande variação) dos dados. São fundamentais para avaliar consistência e estabilidade das informações em uma perspectiva estatística.
+                        </p>
+
+                        <li style="margin-left: 2rem; margin-bottom: 1rem; color: #475569;"><strong>Amplitude total</strong></li>
+                            <p style="margin-left: 2rem" class="content-text">
+                                Dentre as medidas de dispersão, apresenta-se como a mais simples. Demonstra a diferença entre o maior e menor valor do conjunto de dados. <br>
+                            </p>
+
+                        <li style="margin-left: 2rem; margin-bottom: 1rem; color: #475569;"><strong>Variância</strong></li>
+                            <p style="margin-left: 2rem; margin-bottom: 0.5rem;" class="content-text">
+                                A variância é responsável por calcular o quadrado do valor médio do afastamento dos valores de um conjunto de dados em relação à média. <br> Fórmula: σ² = [ Σ (xi - μ)² ] / n
+                                
+                            </p>
+                            <li style="margin-left: 3rem; color: #475569;">σ² = variância;</li>
+                            <li style="margin-left: 3rem; color: #475569;">Σ = somatório;</li>
+                            <li style="margin-left: 3rem; color: #475569;">xi = valor correspondente ao número "i" na ordem do conjunto;</li>
+                            <li style="margin-left: 3rem; color: #475569;">μ = média dos valores do conjunto;</li>
+                            <li style="margin-left: 3rem; color: #475569;">n = número total de elementos do conjunto.</li>
+
+                        <li style="margin-left: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; color: #475569;"><strong>Desvio padrão</strong></li>
+                            <p style="margin-left: 2rem; margin-bottom: 0.5rem;" class="content-text">
+                                O desvio padrão, semelhantemente à variância, é responsável por calcular o valor médio do afastamento dos valores de um conjunto de dados em relação à média, entretanto o resultado está na mesma unidade dos dados, contrapondo o resultado ao quadrado apresentado pela variância. <br> Fórmula: σ² = √ [ Σ (xi - μ)² ] / n
+                                </p>
+                            <li style="margin-left: 3rem; color: #475569;">σ = desvio padrão;</li>
+                            <li style="margin-left: 3rem; color: #475569;">Σ = somatório;</li>
+                            <li style="margin-left: 3rem; color: #475569;">xi = valor correspondente ao número "i" na ordem do conjunto;</li>
+                            <li style="margin-left: 3rem; color: #475569;">μ = média dos valores do conjunto;</li>
+                            <li style="margin-left: 3rem; color: #475569;">n = número total de elementos do conjunto.</li>
+                            
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+            <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
+            <input type="hidden" name="aula_id" value=2>
+            {% if 2 not in concluidas %}
+                <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
+            {% else %}
+                <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
+            {% endif %}
+            </form>
+                
+                <button class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+
+    </main>
+
+    <!-- Aula 3 (exercício - COM data attributes) -->
+    <main id="aula-3" class="course-content {% if aula_atual != 3 %}inativo{% endif %}" data-aula-id="3" data-proxima-aula="4">
+        <div class="cabecalho-conteudo">
+            <h1 class="titulo-conteudo">Exercícios</h1>
+            <p class="descricao-conteudo">Prova acerca dos conteúdos do tópico 'Fundamentos'. Ao clicar em 'Continuar', seu acesso às aulas teóricas será restringido — sendo assim, se certifique que está pronto para a realização da avaliação.</p>
+            
+            <div class="metadados-aula">
+                <div class="emblema-meta avaliacao">
+                    📝 Avaliação
+                </div>
+                
+                <div class="emblema-meta intermediario">
+                    🎯 Intermediário
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <center>
+        {% if 3 in concluidas %}
+    <div class="aviso-concluido">
+        <div style="background: #f0f9ff; padding: 2rem; border-radius: 12px; border: 2px solid #3b82f6; max-width: 500px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+            <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Avaliação Concluída</h3>
+            <p style="color: #475569; margin-bottom: 1.5rem;">Você já completou esta avaliação com sucesso!</p>
+            <button class="nav-button primary" onclick="proximaAulaPosAvaliacao()">
+                Ir para Próxima Aula ▶
+            </button>
+        </div>
+    </div>
+{% else %}
+    <button class="botao-iniciar" onclick="ativarEx(this)">
+        Continuar
+    </button>
+{% endif %}
+        </center>
+        <div class="corpo-conteudo inativo">
+            <div class="secao-conteudo">
+                <div class="secao-progresso">
+                    <div class="titulo-progresso">Progresso da Avaliação</div>
+                    <div class="barra-progresso">
+                        <div class="preenchimento-progresso" style="width: 25%"></div>
+                    </div>
+                    <div class="texto-progresso">Questão 1 de 4</div>
+                </div>
+
+                <div class="cartao-exercicio">
+                    <div class="cabecalho-exercicio">
+                        <div class="numero-exercicio">1</div>
+                        <div class="tipo-exercicio">Múltipla Escolha</div>
+                    </div>
+                    
+                    <div class="pergunta-exercicio">
+                        <strong>O que é Estatística?</strong><br><br>
+                    </div>
+
+                    <ul class="opcoes">
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">A</div>
+                            <span>Uma área da matemática que estuda apenas números inteiros.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">B</div>
+                            <span>Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">C</div>
+                            <span>A ciência que cria dados para pesquisas.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">D</div>
+                            <span>Apenas a criação de gráficos para mostrar informações.</span>
+                        </li>
+                    </ul>
+
+                    <div class="acoes-exercicio">
+                        <button class="botao botao-principal" onclick="repassarQuest()">Voltar questão</button>
+                        <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
+                        <button class="botao botao-principal" id="final" onclick="proximaQuestao()">Próxima questão</button>
+                    </div>
+                </div>
+
+                <div class="cartao-resumo">
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Resumo da Avaliação</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Acompanhe seu progresso nesta avaliação</p>
+                    
+                    <div class="estatisticas-resumo">
+                        <div class="estatistica">
+                            <span class="numero-estatistica">1</span>
+                            <span class="rotulo-estatistica">Respondidas</span>
+                        </div>
+                        <div class="estatistica">
+                            <span class="numero-estatistica">3</span>
+                            <span class="rotulo-estatistica">Restantes</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Gabarito da Avaliação -->
+    <main class="avaliation-wrapper inativo">
+        <div class="result-header-zone">
+            <h1 class="main-title-display">Resultado da Avaliação</h1>
+            <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos da Estatística' e revise as questões com o gabarito detalhado.</p>
+            
+            <div class="lesson-metadata-row">
+                <div class="badge-metadata back">    
+                </div>
+                <div class="badge-metadata feed">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-body-content">
+            <div class="content-section-block">
+                <div class="results-showcase-card">
+                    <div class="grade-display-large"></div>
+                    <div class="outcome-status-text"></div>
+                    <div class="outcome-description-text"></div>
+                </div>
+
+                <div class="stats-grid-container">
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big correct-answer"></span>
+                        <span class="metric-label-text">Acertos</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big wrong-answer"></span>
+                        <span class="metric-label-text">Erros</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big porcentagi">75%</span>
+                        <span class="metric-label-text">Aproveitamento</span>
+                    </div>
+                    
+                </div>
+
+                <h2 class="section-heading-title">📝 Gabarito Detalhado</h2>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">1</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>O que é Estatística?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Uma área da matemática que estuda apenas números inteiros.</span>
+                        </li>
+                        <li class="choice-item-row um right-answer ">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.</span>
+                        </li>
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">C</div>
+                            <span>A ciência que cria dados para pesquisas.</span>
+                        </li>
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Apenas a criação de gráficos para mostrar informações.</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A Estatística é realmente um conjunto de métodos científicos para coletar, organizar, analisar e interpretar dados, permitindo a compreensão de fenômenos e tomada de decisões baseadas em evidências.
+                    </div>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">2</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Qual é a primeira etapa do estudo estatístico?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row dois right-answer">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Coleta de dados</span>
+                        </li>
+                        <li class="choice-item-row dois">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Organização dos dados</span>
+                        </li>
+                        <li class="choice-item-row dois">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Análise dos dados</span>
+                        </li>
+                        <li class="choice-item-row dois">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Interpretação dos resultados</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A primeira etapa do estudo estatístico é a <strong>coleta de dados</strong>. Antes de organizar, analisar ou interpretar, é necessário primeiro obter as informações através de pesquisas, questionários ou outras fontes confiáveis.
+                    </div>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">3</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Qual tipo de gráfico é mais adequado para mostrar a evolução de dados ao longo do tempo?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row tres">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Gráfico de barras</span>
+                        </li>
+                        <li class="choice-item-row tres right-answer">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Gráfico de linhas</span>
+                        </li>
+                        <li class="choice-item-row tres">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Gráfico de setores</span>
+                        </li>
+                        <li class="choice-item-row tres">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Histograma</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> O gráfico de linhas é ideal para mostrar a evolução ou mudança de dados ao longo do tempo, pois conecta os pontos de dados em sequência temporal, facilitando a visualização de tendências e padrões.
+                    </div>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">4</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Por que é importante interpretar estatísticas com cuidado?</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row quatro">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Porque números sempre mentem</span>
+                        </li>
+                        <li class="choice-item-row quatro">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Para fazer gráficos mais bonitos</span>
+                        </li>
+                        <li class="choice-item-row quatro right-answer">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Para evitar conclusões falsas e tomar decisões adequadas</span>
+                        </li>
+                        <li class="choice-item-row quatro">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Porque a matemática é difícil</span>
+                        </li>
+                    </ul>
+
+                    <div class="explanation-box">
+                        <strong>Explicação:</strong> A interpretação cuidadosa das estatísticas é fundamental para evitar conclusões falsas, identificar possíveis vieses nos dados e tomar decisões bem fundamentadas. Uma análise superficial pode levar a equívocos importantes.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    
+        <div class="lesson-navigation"></div>
+    </main>
+{% endblock %}

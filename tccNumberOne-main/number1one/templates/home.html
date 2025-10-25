@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home/style.css">
+    <title>Meus Cursos - NumberOne</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="header-nav">
+            <a href="/home" class="logo"><img src="static/assets/logo.png" alt=""></a>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Meus Cursos</a></li>
+                <li><a href="#" class="nav-link">Explorar</a></li>
+                <li><a href="#" class="nav-link">Certificados</a></li>
+                <li><a href="#" class="nav-link">Comunidade</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+            
+            <div class="user-section">
+                <div class="notifications tooltip" data-tooltip="Notificações">
+                    🔔
+                    <div class="notification-badge">3</div>
+                </div>
+                <div class="user-avatar">{{ current_user.user_name[:2]|upper }}</div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <h1>Olá, {{usuario.user_name}} !👋</h1>
+                    <p>Continue sua jornada de aprendizado. Você está fazendo um ótimo progresso!</p>
+                </div>
+                
+                <div class="welcome-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Cursos Ativos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">127</span>
+                        <span class="stat-label">Horas de Estudo</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Dias Seguidos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <div class="main-content">
+                <!-- Cursos Section -->
+                <section class="courses-section">
+                    <div class="courses-header">
+                        <h2 class="courses-title">Meus Cursos</h2>
+                        <div class="course-tabs">
+                            <button class="tab-button active" onclick="switchTab('all')">Todos</button>
+                            <button class="tab-button" onclick="switchTab('active')">Em Andamento</button>
+                            <button class="tab-button" onclick="switchTab('completed')">Concluídos</button>
+                        </div>
+                    </div>
+                    
+                    <div class="courses-grid" id="coursesGrid">
+                        <!-- Curso 1 -->
+                        <div class="course-card" onclick="openCourse('algebra')">
+                            <div class="course-thumbnail">
+                                📊
+                                <div class="course-progress-bar">
+                                    <div class="course-progress-fill" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Álgebra Básica</h3>
+                                <p class="course-description">Fundamentos da álgebra com exercícios práticos e exemplos do cotidiano.</p>
+                                <div class="course-meta">
+                                    <span class="course-level">Iniciante</span>
+                                    <span class="course-time">⏱️ 13/20h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Curso 2 -->
+                        <div class="course-card" onclick="openCourse('geometry')">
+                            <div class="course-thumbnail">
+                                📐
+                                <div class="course-progress-bar">
+                                    <div class="course-progress-fill" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Geometria</h3>
+                                <p class="course-description">Explore formas, medidas e propriedades geométricas de forma visual.</p>
+                                <div class="course-meta">
+                                    <span class="course-level">Intermediário</span>
+                                    <span class="course-time">⏱️ 7/25h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Curso 3 -->
+                         <a href="{{ url_for('curso', curso_nome='Estatística') }}" style="text-decoration: none; color: inherit;">
+                            <div class="course-card" onclick="openCourse('statistics')">
+                                <div class="course-thumbnail">
+                                    📈
+                                    <div class="course-progress-bar">
+                                        <div class="course-progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Estatística</h3>
+                                    <p class="course-description">Análise de dados, probabilidade e estatística aplicada.</p>
+                                    <div class="course-meta">
+                                        <span class="course-level">Intermediário</span>
+                                        <span class="course-time">⏱️ 24/30h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Curso 4 -->
+                        <div class="course-card" onclick="openCourse('calculus')">
+                            <div class="course-thumbnail">
+                                ∫
+                                <div class="course-progress-bar">
+                                    <div class="course-progress-fill" style="width: 15%"></div>
+                                </div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Cálculo I</h3>
+                                <p class="course-description">Limites, derivadas e integrais explicados de forma clara e objetiva.</p>
+                                <div class="course-meta">
+                                    <span class="course-level">Avançado</span>
+                                    <span class="course-time">⏱️ 6/40h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sidebar-widgets">
+                <!-- Progresso Geral -->
+                <div class="progress-overview">
+                    <div class="progress-header">
+                        <h3 class="progress-title">Progresso Geral</h3>
+                    </div>
+                    
+                    <div class="overall-progress">
+                        <div class="progress-circle">
+                            <div class="circle-bg">
+                                <span class="progress-percentage">35%</span>
+                            </div>
+                        </div>
+                        <div class="progress-details">
+                            <p class="progress-subtitle">Progresso Total dos Cursos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-stats">
+                        <div class="stat-box">
+                            <div class="stat-box-number">50</div>
+                            <div class="stat-box-label">Aulas Concluídas</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box-number">12</div>
+                            <div class="stat-box-label">Exercícios Feitos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Streak Calendar -->
+                <div class="streak-widget">
+                    <div class="streak-header">
+                        <h3 class="streak-title">
+                            🔥 Sequência de Estudos
+                        </h3>
+                        <div class="streak-counter">15 dias seguidos</div>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <!-- Headers dos dias -->
+                        <div class="calendar-day header">D</div>
+                        <div class="calendar-day header">S</div>
+                        <div class="calendar-day header">T</div>
+                        <div class="calendar-day header">Q</div>
+                        <div class="calendar-day header">Q</div>
+                        <div class="calendar-day header">S</div>
+                        <div class="calendar-day header">S</div>
+                        
+                        <!-- Semana 1 -->
+                        <div class="calendar-day inactive">28</div>
+                        <div class="calendar-day inactive">29</div>
+                        <div class="calendar-day inactive">30</div>
+                        <div class="calendar-day inactive">31</div>
+                        <div class="calendar-day completed">1</div>
+                        <div class="calendar-day completed">2</div>
+                        <div class="calendar-day completed">3</div>
+                        
+                        <!-- Semana 2 -->
+                        <div class="calendar-day completed">4</div>
+                        <div class="calendar-day completed">5</div>
+                        <div class="calendar-day completed">6</div>
+                        <div class="calendar-day completed">7</div>
+                        <div class="calendar-day completed">8</div>
+                        <div class="calendar-day completed">9</div>
+                        <div class="calendar-day completed">10</div>
+                        
+                        <!-- Semana 3 -->
+                        <div class="calendar-day completed">11</div>
+                        <div class="calendar-day completed">12</div>
+                        <div class="calendar-day completed">13</div>
+                        <div class="calendar-day completed">14</div>
+                        <div class="calendar-day today">15</div>
+                        <div class="calendar-day active">16</div>
+                        <div class="calendar-day active">17</div>
+                    </div>
+                </div>
+
+                <!-- Continue Learning -->
+                <div class="continue-learning">
+                    <h3 class="continue-title">Continue de onde parou</h3>
+                    
+                    <div class="recent-lesson">
+                        <div class="lesson-title">Introdução às Equações</div>
+                        <div class="lesson-course">Álgebra Básica</div>
+                        <div class="lesson-progress">
+                            <div class="lesson-progress-fill" style="width: 70%"></div>
+                        </div>
+                        <button class="continue-button" onclick="continueCourse()">Continuar Estudando</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados dos cursos
+        const coursesData = {
+            all: [
+                { id: 'algebra', title: 'Álgebra Básica', icon: '📊', progress: 65, level: 'Iniciante', time: '13/20h', description: 'Fundamentos da álgebra com exercícios práticos e exemplos do cotidiano.' },
+                { id: 'geometry', title: 'Geometria', icon: '📐', progress: 30, level: 'Intermediário', time: '7/25h', description: 'Explore formas, medidas e propriedades geométricas de forma visual.' },
+                { id: 'statistics', title: 'Estatística', icon: '📈', progress: 80, level: 'Intermediário', time: '24/30h', description: 'Análise de dados, probabilidade e estatística aplicada.' }
+        ]
+        }
