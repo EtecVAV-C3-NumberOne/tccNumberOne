@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/curso_' ~ nome_formatado ~ '/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/curso_estatistica/style.css') }}">
     <title>{{ curso.curso }} - NumberOne</title>
 </head>
 <body>
@@ -72,7 +72,7 @@
                         data-aula-id="{{ aula.id }}" 
                         onclick="toggleItem(this)">
                             <div class="lesson-icon">
-                                {% if 'exercicio' in aula.aula.lower() or 'avaliação' in aula.aula.lower() %}📝{% else %}📖{% endif %}
+                                {% if 'exercício' in aula.aula.lower() or 'avaliação' in aula.aula.lower() %}📝{% else %}📖{% endif %}
                             </div>
                             <span>{{ aula.aula }}</span>
                         </div>
@@ -88,6 +88,6 @@
     </div>
 
     <script src="{{ url_for('static', filename='scripts/curso_base.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/curso_' ~ nome_formatado ~ '.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/curso_estatistica.js') }}"></script>
 </body>
 </html>

@@ -2,11 +2,11 @@
 
 {% block curso_content %}
     <!-- Aula 1 (conteúdo normal) -->
-    <main id="aula-1" class="course-content {% if aula_atual != 1 %}inativo{% endif %}">
+    <main id="aula-4" class="course-content {% if aula_atual != 4 %}inativo{% endif %}">
         <div class="content-header">
-                <h1 class="content-title">Introdução à Estatística</h1>
+                <h1 class="content-title">Introdução à Trigonometria</h1>
                 <p class="content-description">
-                    Aprenda os conceitos fundamentais da Estatística e suas devidas implicações.
+                    Aprenda os conceitos fundamentais da Trigonometria e suas devidas implicações.
                 </p>
                 <div class="lesson-meta">
                     <div class="meta-badge">
@@ -23,47 +23,44 @@
             <div class="content-body">
                 <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">1. 📌 O que é Estatística? </h2>
+                        <h2 class="section-title">1. 📌 O que é Trigonometria? </h2>
                         <p class="content-text">
-                            A Estatística é a área da Matemática que coleta, organiza, analisa e interpreta dados para compreender fenômenos e ajudar na tomada de decisões.
-Ela é usada em praticamente tudo: pesquisas de opinião, estudos científicos, controle de produção, economia, esportes e muito mais.<br><br>
-Por meio de métodos estatísticos, é possível resumir grandes volumes de informações em gráficos, tabelas e medidas como média, mediana e moda, facilitando a visualização e compreensão dos dados.<br><br>
-Além disso, a Estatística permite fazer previsões, identificar padrões e verificar a confiabilidade de resultados, sendo essencial em contextos que envolvem incertezas ou variabilidade.<br>
+                            A Trigonometria estuda as relações entre ângulos e lados de triângulos, além das funções trigonométricas, que são fundamentais para resolver problemas de geometria, física, engenharia e diversas áreas.
+Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas quanto em aplicações práticas, como movimento circular, ondas, altura de prédios, distâncias inacessíveis, entre outros.
+<br>
                         </p>
-                        <h2 class="section-title">2. 🔍 Etapas do Estudo Estatístico </h2>
+                        <h2 class="section-title">2. Razões Trigonométricas no Triângulo Retângulo </h2>
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Coleta de dados:</strong> obter informações através de pesquisas ou fontes alternativas;</li> 
-                            <li><strong>Organização dos dados:</strong> colocar os dados em tabelas, listas, gráficos para facilitar a leitura; </li> 
-                            <li><strong>Análise dos dados:</strong> calcular medidas estatísticas e identificar padrões; </li> 
-                            <li><strong>Interpretação e conclusão:</strong> apuração e demonstração dos resultados finais obtidos.</li> 
+                            <li><strong>Hipotenusa:</strong> lado oposto ao ângulo reto</li> 
+                            <li><strong>Cateto oposto:</strong> lado oposto ao ângulo considerado; </li> 
+                            <li><strong>Cateto adjacente:</strong> lado que forma o ângulo junto com a hipotenusa.</li> 
                         </ul>
-                        <div class="highlight-box">
-                            <div class="highlight-title">
-                                <span>💡</span>
-                                <span>Observação Importante</span>
-                            </div>
-                            <p>A veracidade não está intrínseca nas estatísticas, ou seja, elas podem ser verdadeiras ou não. Visando informação e conhecimentos válidos, é necessário checar a validade das informações utilizadas na estatística.</p>
-                        </div>
+                        <p class="content-text">
+                            Para um ângulo agudo α, definimos:
+                        </p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>seno (sen α):</strong> cateto oposto / hipotenusa;</li> 
+                            <li><strong>cosseno (cos α):</strong> cateto adjacente / hipotenusa; </li> 
+                            <li><strong>tangente (tan α):</strong> cateto oposto / cateto adjacente.</li> 
+                        </ul>
                     </div>
 
                     <div class="content-section">
-                        <h2 class="section-title">3. 📑 Tipos de Dados </h2>
-                        <p class="content-text">
-                            Os dados podem ser classificados de duas formas: 
-                        </p>
+                        <h2 class="section-title">3. Relações Fundamentais </h2>
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Quantitativos</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li><strong>Discretos:</strong> valores inteiros contáveis (ex.: número de filhos).</li>
-                                <li><strong>Contínuos:</strong> valores que podem ser fracionários (ex.: altura, peso). </li>
-                            </ul>
-                            <li><strong>Qualitativos</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li><strong>Nominais:</strong> sem ordem lógica (ex.: cor dos olhos, sexo). </li>
-                                <li><strong>Ordinais:</strong> têm ordem (ex.: classificação em 1º, 2º, 3º lugar). </li>
-                            </ul>
+                            <li>sen² α + cos² α = 1</li> 
+                            <li>tan α = sen α / cos α</li> 
+                            <li>cot α = 1 / tan α</li> 
+                            <li>sec α = 1 / cos α</li> 
+                            <li>cossec α = 1 / sen α </li> 
                         </ul>
                     </div>
+                    <h2 class="section-title">4. Ângulo Notáveis </h2>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                        <li><strong>30°:</strong> sin 1/2; cos √3/2; tan √3/3;</li> 
+                        <li><strong>45°:</strong> sin √2/2; cos √2/2; tan 1/2;</li> 
+                        <li><strong>60°:</strong> sin √3/2; cos 1/2; tan √3.</li> 
+                    </ul>
                 </div>
             </div>
             <div class="lesson-navigation">  
@@ -88,11 +85,11 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
     </main>
 
     <!-- Aula 2 (conteúdo normal) -->
-    <main id="aula-2" class="course-content {% if aula_atual != 2 %}inativo{% endif %}">
+    <main id="aula-5" class="course-content {% if aula_atual != 5 %}inativo{% endif %}">
         <div class="content-header">
-                <h1 class="content-title">Conceituação teórica</h1>
+                <h1 class="content-title">Equação Trigonométrica</h1>
                 <p class="content-description">
-                    Aprofundamento nos conceitos básicos de Estatística e sua aplicação prática.
+                    Aprofundamento nos conceitos básicos de Trigonometria e sua aplicação prática em equações.
                 </p>
                 <div class="lesson-meta">
                     <div class="meta-badge">
@@ -109,131 +106,119 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
             <div class="content-body">
                 <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">1. 📏 Medidas Estatísticas Fundamentais </h2>
-                        <p class="content-text">
-                            Amplamente usados nas estatísticas, os seguintes conceitos são de suma importância para interpretação e aplicação plena dos dados coletados, possibilitando conclusões lógicas e realistas.
-                            Exemplos:
-                        </p>
-                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Média Aritmética</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li>Soma de todos os valores dividida pelo número de elementos</li>
-                                <li>x + y + z+ ... / w</li>
-                                <ul style="padding-left: 5%;">
-                                    
-                                    <li>w = quantidade de valores</li>
-                                    <li>x,y,z = valores (exemplificação)</li>
-                                </ul>
-                            </ul>
-                            <br>
-                            <li><strong>Mediana</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li>O valor que divide o conjunto ao meio quando ele está em ordem crescente.</li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Se o número de valores for ímpar, a mediana é o valor que se encontra entre duas metades iguais do conjunto, considerando a menor divisão possível.</li>
-                                    <li>Se o número de valores for par, a mediana é a média dos dois valores encontrados entre duas metades iguais do conjunto, considerando a menor divisão possível e diferente de zero.</li>
-                                </ul>
-                            </ul>
-                            <br>
-                            <li><strong>Moda</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li>O valor que mais se repete dentro do conjunto.</li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
-                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
-                                </ul>
-                            </ul>
-                            <br>
-                            <li><strong>Moda</strong></li>
-                            <ul style="padding-left: 5%;">
-                                <li>O valor que mais se repete dentro do conjunto.</li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Pode não existir moda, quando todos os valores aparecem a mesma quantidade de vezes.</li>
-                                    <li>Pode haver mais de uma moda, quando encontram-se dois ou mais picos iguais nos dados — sem cobrí-los inteiramente.</li>
-                                </ul>
-                            </ul>
-                        </ul>
+                        <h2 class="section-title">1. Resolução </h2>
+                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>Isolar</strong> a função trigonométrica;</li> 
+                            <li><strong>Identificar</strong> o valor que a função deve assumir;</li> 
+                            <li><strong>Achar os ângulos principais</strong> usando a relação inversa (arco seno, arco cosseno ou arco tangente);</li> 
+                            <li><strong>Considerar a periodicidade</strong> da função para encontrar todas as soluções;</li> 
+                            <li><strong>Ajustar</strong> o resultado para o domínio pedido (graus ou radianos).</li> 
+                        </ol>
                     </div>
+                    <p style="margin-left: 2rem;"class="content-text">
+                        <strong>Exemplo 1:</strong>
+                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li>Resolver sen x = 1/2, com x em [0°, 360°];</li> 
+                            <li>sen x = 1/2 → ângulo principal: 30°;</li> 
+                            <li>No 1º quadrante: x = 30°;</li> 
+                            <li>No 2º quadrante: x = 150°;</li> 
+                            <li>Solução: x = 30°, 150°.</li> 
+                        </ol>
+                    </p>
 
+                    <p style="margin-left: 2rem;"class="content-text">
+                        <strong>Exemplo 2:</strong>
+                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li>Resolver cos x = √3/2, com x em [0°, 360°];</li> 
+                            <li>Ângulo principal: 30°;</li> 
+                            <li>cos é positivo no 1º e 4º quadrantes: x = 30°, 330°;</li> 
+                        </ol>
+                    </p>
+
+                    <p style="margin-left: 2rem;"class="content-text">
+                        <strong>Exemplo 3:</strong>
+                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li>Resolver tan x = 1, com x em [0°, 360°];</li> 
+                            <li>Ângulo principal: 45°;</li> 
+                            <li>tan é positiva no 1º e 3º quadrantes: x = 45°, 225°;</li> 
+                        </ol>
+                    </p>
+                    
+
+                
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+            <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
+            <input type="hidden" name="aula_id" value=2>
+            {% if 2 not in concluidas %}
+                <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
+            {% else %}
+                <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
+            {% endif %}
+            </form>
+                
+                <button class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+
+    </main>
+    <main id="aula-6" class="course-content {% if aula_atual != 6 %}inativo{% endif %}">
+        <div class="content-header">
+                <h1 class="content-title">Identidades e Fórmulas Essenciais</h1>
+                <p class="content-description">
+                    Apresentação de elementos essenciais em questões trigonométricas.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Intermediário</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">2. 📋 Tabelas Estatísticas </h2>
-                        <p class="content-text">
-                            Tabelas são um elemento comumente usado na exposição de dados, dada a praticidade de seus elementos visuais e como os organiza. Dentre a composição das tabelas, estão:
-                        </p>
+                        <h2 class="section-title">1. Fórmulas </h2>
+
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Título:</strong> Indica o assunto da tabela.</li>
-                            <li><strong>Cabeçalho:</strong> Nomes das colunas.</li>
-                            <li><strong>Corpo:</strong> Onde os dados estão dispostos.</li>
-                            <li><strong>Fonte:</strong> Origem dos dados.</li>
-                        </ul>
-                        <br>
-                        <p class="content-text">
-                            Tabelas de frequência são um subtipo das tabelas estatísticas e tem isso e isso e isso
-                        </p>
-                        <h2 class="section-title">3. 📊 Tipos de Gráficos </h2>
-                        <p class="content-text">
-                            (Explicação detalhada sobre gráficos)
-                        </p>
-                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Gráficos de colunas/barras</strong></li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Barras verticais ou horizontais</li>
-                                    <li>Usado para comparar valores</li>
-                                </ul>
-                            <li><strong>Gráfico de linhas</strong></li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Pontos ligados por linhas.</li>
-                                    <li>Usado para mostrar evolução ao longo do tempo.</li>
-                                </ul>
-                            <li><strong>Gráfico de setores</strong></li>
-                                <ul style="padding-left: 5%;">
-                                    <li>Representa proporções em um círculo.</li>
-                                    <li>Cada “fatia” representa uma parte do total.</li>
-                                </ul>
-                            <li><strong>Histograma</strong></li>
-                            <ul style="padding-left: 5%;">
-                                    <li>Gráfico de barras coladas. </li>
-                                    <li>Usado para dados contínuos agrupados em intervalos.</li>
-                                </ul>
-                            <li><strong>Pictograma</strong></li>
-                            <ul style="padding-left: 5%;">
-                                    <li>Usa figuras ou símbolos para representar quantidades.</li>  
-                                </ul>
-                        </ul>
-                        <h2 class="section-title">4. 🧠 Medidas de dispersão </h2>
-                        <p class="content-text">
-                            As medidas de dispersão indicam quanto os valores de um conjunto se afastam da média. Elas mostram a concentração (pouca variação) ou dispersão (grande variação) dos dados. São fundamentais para avaliar consistência e estabilidade das informações em uma perspectiva estatística.
-                        </p>
 
-                        <li style="margin-left: 2rem; margin-bottom: 1rem; color: #475569;"><strong>Amplitude total</strong></li>
-                            <p style="margin-left: 2rem" class="content-text">
-                                Dentre as medidas de dispersão, apresenta-se como a mais simples. Demonstra a diferença entre o maior e menor valor do conjunto de dados. <br>
-                            </p>
+                            <li><strong>Soma e diferença de arcos</strong></li> 
+                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
+                                    <li><strong>sen(a ± b)</strong> = sen x a x cos b ± cos x a x sen x b</li>
+                                    <li><strong>cos(a ± b) </strong> = cos x a x cos x b ∓ sen x a x sen b</li>
+                                    <li><strong>tan(a ± b) </strong> = (tan a ± tan b) / (1 ∓ tan a tan b)</li>
+                                </ul>
 
-                        <li style="margin-left: 2rem; margin-bottom: 1rem; color: #475569;"><strong>Variância</strong></li>
-                            <p style="margin-left: 2rem; margin-bottom: 0.5rem;" class="content-text">
-                                A variância é responsável por calcular o quadrado do valor médio do afastamento dos valores de um conjunto de dados em relação à média. <br> Fórmula: σ² = [ Σ (xi - μ)² ] / n
-                                
-                            </p>
-                            <li style="margin-left: 3rem; color: #475569;">σ² = variância;</li>
-                            <li style="margin-left: 3rem; color: #475569;">Σ = somatório;</li>
-                            <li style="margin-left: 3rem; color: #475569;">xi = valor correspondente ao número "i" na ordem do conjunto;</li>
-                            <li style="margin-left: 3rem; color: #475569;">μ = média dos valores do conjunto;</li>
-                            <li style="margin-left: 3rem; color: #475569;">n = número total de elementos do conjunto.</li>
-
-                        <li style="margin-left: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; color: #475569;"><strong>Desvio padrão</strong></li>
-                            <p style="margin-left: 2rem; margin-bottom: 0.5rem;" class="content-text">
-                                O desvio padrão, semelhantemente à variância, é responsável por calcular o valor médio do afastamento dos valores de um conjunto de dados em relação à média, entretanto o resultado está na mesma unidade dos dados, contrapondo o resultado ao quadrado apresentado pela variância. <br> Fórmula: σ² = √ [ Σ (xi - μ)² ] / n
-                                </p>
-                            <li style="margin-left: 3rem; color: #475569;">σ = desvio padrão;</li>
-                            <li style="margin-left: 3rem; color: #475569;">Σ = somatório;</li>
-                            <li style="margin-left: 3rem; color: #475569;">xi = valor correspondente ao número "i" na ordem do conjunto;</li>
-                            <li style="margin-left: 3rem; color: #475569;">μ = média dos valores do conjunto;</li>
-                            <li style="margin-left: 3rem; color: #475569;">n = número total de elementos do conjunto.</li>
+                            <li><strong>Arco duplo</strong></li>
+                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
+                                    <li><strong>sen 2a</strong> = 2 x sen x a x cos x a</li>
+                                    <li><strong>cos 2a</strong> = cos² a - sen² a</li>
+                                    <li><strong>tan 2a</strong> = (2 tan a) / (1 - tan² a)</li>
+                                </ul>
                             
+                            
+                            <li><strong>Lei dos senos</strong></li> 
+                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
+                                    <li>a / sen A = b / sen B = c / sen C</li>
+                                </ul>
 
-                        
-                    </div>
+
+                            <li><strong>Lei dos cossenos</strong></li> 
+                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
+                                    <li>a² = b² + c² - 2bc x cos x A</li>
+                                </ul>
+                        </ul>
                 </div>
             </div>
             <div class="lesson-navigation">
@@ -258,7 +243,7 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
     </main>
 
     <!-- Aula 3 (exercício - COM data attributes) -->
-    <main id="aula-3" class="course-content {% if aula_atual != 3 %}inativo{% endif %}" data-aula-id="3" data-proxima-aula="4">
+    <main id="aula-7" class="course-content {% if aula_atual != 3 %}inativo{% endif %}" data-aula-id="3" data-proxima-aula="4">
         <div class="cabecalho-conteudo">
             <h1 class="titulo-conteudo">Exercícios</h1>
             <p class="descricao-conteudo">Prova acerca dos conteúdos do tópico 'Fundamentos'. Ao clicar em 'Continuar', seu acesso às aulas teóricas será restringido — sendo assim, se certifique que está pronto para a realização da avaliação.</p>
@@ -275,7 +260,7 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
         </div>
         <br><br>
         <center>
-        {% if 3 in concluidas %}
+        {% if 7 in concluidas %}
     <div class="aviso-concluido">
         <div style="background: #f0f9ff; padding: 2rem; border-radius: 12px; border: 2px solid #3b82f6; max-width: 500px;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
