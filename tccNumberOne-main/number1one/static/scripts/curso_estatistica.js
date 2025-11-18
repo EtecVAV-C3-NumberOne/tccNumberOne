@@ -2,7 +2,8 @@
 
 // Variáveis específicas do exercício de Estatística
 let respostas = {};
-let correcao = {1: 'B', 2: 'A', 3: 'B', 4: 'C'};
+let correcaoEst = {1: 'B', 2: 'A', 3: 'B', 4: 'C'};
+let correcaoTri = {1: 'C', 2: 'A', 3: 'B', 4: 'D'};
 let questaoAtual = 1;
 let totalQuestoes = 4;
 let acertosAvaliacao = 0;
@@ -18,14 +19,14 @@ function limparSelecao() {
     document.querySelectorAll('.opcao').forEach(opt => opt.classList.remove('selecionada'));
 }
 
-function repassarQuest() {
+function repassarQuest(tipo) {
     if (questaoAtual == 1) return;
     questaoAtual--;
     atualizarProgresso();
-    carregarProximaQuestao();
+    carregarProximaQuestao(tipo);
 }
 
-function proximaQuestao() {
+function proximaQuestao(tipo) {
     const selecionada = document.querySelector('.opcao.selecionada');
     if (!selecionada) {
         alert('Por favor, selecione uma alternativa antes de continuar.');
@@ -41,11 +42,11 @@ function proximaQuestao() {
     if (questaoAtual < totalQuestoes) {
         questaoAtual++;
         atualizarProgresso();
-        carregarProximaQuestao();
+        carregarProximaQuestao(tipo);
     } else {
         if (confirm('Tem certeza que deseja finalizar a avaliação?')) {
             alert('Avaliação finalizada! Redirecionando para os resultados...');
-            gabarito();
+            gabarito(tipo);
         }
     }
 }
@@ -62,7 +63,7 @@ function atualizarProgresso() {
     document.querySelector('.estatisticas-resumo .estatistica:nth-child(2) .numero-estatistica').textContent = totalQuestoes - questaoAtual;
 }
 
-function carregarProximaQuestao() {
+function carregarProximaQuestao(tipo) {
     const cartaoExercicio = document.querySelector('.cartao-exercicio');
     cartaoExercicio.style.opacity = '0.5';
     
@@ -82,85 +83,169 @@ function carregarProximaQuestao() {
         }
         
         // Conteúdo específico das questões de Estatística
-        if (questaoAtual === 1) {
-            document.querySelector('.pergunta-exercicio').innerHTML = '<strong>O que é Estatística?</strong><br><br>';
-            const opcoes = document.querySelector('.opcoes');
-            const spans = opcoes.querySelectorAll('span');
-            for (let i = 0; i < spans.length; i++) {
-                if (i==0){
-                    spans[i].innerHTML = "Uma área da matemática que estuda apenas números inteiros.";
+        if (tipo=="est") {
+            if (questaoAtual === 1) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>O que é Estatística?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Uma área da matemática que estuda apenas números inteiros.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "A ciência que cria dados para pesquisas.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Apenas a criação de gráficos para mostrar informações.";
+                    }
                 }
-                if (i==1){
-                    spans[i].innerHTML = "Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.";
+            }
+            if (questaoAtual === 2) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Qual é a primeira etapa do estudo estatístico?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Coleta de dados.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Organização dos dados.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Análise dos dados.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Interpretação dos resultados.";
+                    }
                 }
-                if (i==2){
-                    spans[i].innerHTML = "A ciência que cria dados para pesquisas.";
+            }
+            if (questaoAtual === 3) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Qual tipo de gráfico é mais adequado para mostrar a evolução de dados ao longo do tempo?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Gráfico de barras.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Gráfico de linhas.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Gráfico de setores.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Histograma.";
+                    }
                 }
-                if (i==3){
-                    spans[i].innerHTML = "Apenas a criação de gráficos para mostrar informações.";
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Próxima questão";
+            }
+            if (questaoAtual === 4) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Por que é importante interpretar estatísticas com cuidado?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Porque números sempre mentem.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Para fazer gráficos mais bonitos.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Para evitar conclusões falsas e tomar decisões adequadas.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Porque a matemática é difícil.";
+                    }
                 }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Finalizar";
             }
         }
-        if (questaoAtual === 2) {
-            document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Qual é a primeira etapa do estudo estatístico?</strong><br><br>';
-            const opcoes = document.querySelector('.opcoes');
-            const spans = opcoes.querySelectorAll('span');
-            for (let i = 0; i < spans.length; i++) {
-                if (i==0){
-                    spans[i].innerHTML = "Coleta de dados.";
-                }
-                if (i==1){
-                    spans[i].innerHTML = "Organização dos dados.";
-                }
-                if (i==2){
-                    spans[i].innerHTML = "Análise dos dados.";
-                }
-                if (i==3){
-                    spans[i].innerHTML = "Interpretação dos resultados.";
-                }
-            }
-        }
-        if (questaoAtual === 3) {
-            document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Qual tipo de gráfico é mais adequado para mostrar a evolução de dados ao longo do tempo?</strong><br><br>';
-            const opcoes = document.querySelector('.opcoes');
-            const spans = opcoes.querySelectorAll('span');
-            for (let i = 0; i < spans.length; i++) {
-                if (i==0){
-                    spans[i].innerHTML = "Gráfico de barras.";
-                }
-                if (i==1){
-                    spans[i].innerHTML = "Gráfico de linhas.";
-                }
-                if (i==2){
-                    spans[i].innerHTML = "Gráfico de setores.";
-                }
-                if (i==3){
-                    spans[i].innerHTML = "Histograma.";
+        if (tipo=="tri"){
+            if (questaoAtual === 1) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Num triângulo retângulo, o ângulo agudo α possui: hipotenusa = 10cm, cateto oposto = 5cm. Qual é o valor de sin⁡ 𝛼?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "0,3.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "0,4.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "0,5.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "0,6.";
+                    }
                 }
             }
-            const proximo = document.querySelector('button.botao-principal#final');
-            proximo.innerHTML = "Próxima questão";
-        }
-        if (questaoAtual === 4) {
-            document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Por que é importante interpretar estatísticas com cuidado?</strong><br><br>';
-            const opcoes = document.querySelector('.opcoes');
-            const spans = opcoes.querySelectorAll('span');
-            for (let i = 0; i < spans.length; i++) {
-                if (i==0){
-                    spans[i].innerHTML = "Porque números sempre mentem.";
-                }
-                if (i==1){
-                    spans[i].innerHTML = "Para fazer gráficos mais bonitos.";
-                }
-                if (i==2){
-                    spans[i].innerHTML = "Para evitar conclusões falsas e tomar decisões adequadas.";
-                }
-                if (i==3){
-                    spans[i].innerHTML = "Porque a matemática é difícil.";
+            if (questaoAtual === 2) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Resolva cos x = √3/2, com x em [0°, 360°]</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "30° e 330°.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "60° e 300°.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "45° e 315°.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "120° e 240°.";
+                    }
                 }
             }
-            const proximo = document.querySelector('button.botao-principal#final');
-            proximo.innerHTML = "Finalizar";
+            if (questaoAtual === 3) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>O valor de tan(60°) é:</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "√3/2.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "√3.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "√3/3.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "1.";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Próxima questão";
+            }
+            if (questaoAtual === 4) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Em um triângulo, os lados são: b = 8, c = 6, ângulo A = 60°. Calcule a usando a lei dos cossenos.</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "4.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "5.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "7.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "8.";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Finalizar";
+            }   
         }
     }, 300);
 }
@@ -271,7 +356,7 @@ function constarEstatisticas(reposta, corretos, questoes) {
         const nav = document.querySelector('.avaliation-wrapper .lesson-navigation');
     if (nav) {
         nav.innerHTML = `
-            <button class="nav-button secondary" onclick="tentarNovamente()">
+            <button class="nav-button secondary" onclick="tentarNovamente(tipo)">
                 ↻ Tentar Novamente
             </button>
         `;
@@ -282,8 +367,20 @@ function constarEstatisticas(reposta, corretos, questoes) {
     }
 }
 
-function gabarito() {
+function gabarito(tipo) {
     voltarAoTopo();
+    if (tipo =="est"){
+        var correcao = correcaoEst;
+    }
+    else if (tipo=="tri"){
+        var correcao = correcaoTri;
+    }
+    else if (tipo=='alg'){
+        var correcao = correcaoAlg;
+    }
+    else if (tipo=='cal'){
+        var correcao = correcaoCal;
+    }
     prova = document.querySelector('.corpo-conteudo');
     prova.classList.add('inativo');
     const teudo = document.getElementById("aula-3");
@@ -337,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function tentarNovamente() {
+function tentarNovamente(tipo) {
     voltarAoTopo();
     
     // Esconder o gabarito
@@ -364,7 +461,5 @@ function tentarNovamente() {
     
     // Recarregar primeira questão
     atualizarProgresso();
-    carregarProximaQuestao();
-    
-    console.log('🔄 Avaliação reiniciada');
+    carregarProximaQuestao(tipo);
 }

@@ -1,3 +1,7 @@
+<script>
+    const tipo = 'tri'
+    console.log(tipo)
+</script>
 {% extends "curso_base.html" %}
 
 {% block curso_content %}
@@ -291,32 +295,32 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="pergunta-exercicio">
-                        <strong>O que é Estatística?</strong><br><br>
+                        <strong>Num triângulo retângulo, o ângulo agudo α possui: hipotenusa = 10cm, cateto oposto = 5cm. Qual é o valor de sin⁡ 𝛼?</strong><br><br>
                     </div>
 
                     <ul class="opcoes">
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">A</div>
-                            <span>Uma área da matemática que estuda apenas números inteiros.</span>
+                            <span>0,3.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">B</div>
-                            <span>Um conjunto de métodos para coletar, organizar, analisar e interpretar dados.</span>
+                            <span>0,4.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">C</div>
-                            <span>A ciência que cria dados para pesquisas.</span>
+                            <span>0,5.</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">D</div>
-                            <span>Apenas a criação de gráficos para mostrar informações.</span>
+                            <span>0,6.</span>
                         </li>
                     </ul>
 
                     <div class="acoes-exercicio">
-                        <button class="botao botao-principal" onclick="repassarQuest()">Voltar questão</button>
+                        <button class="botao botao-principal" onclick="repassarQuest(tipo)">Voltar questão</button>
                         <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
-                        <button class="botao botao-principal" id="final" onclick="proximaQuestao()">Próxima questão</button>
+                        <button class="botao botao-principal" id="final" onclick="proximaQuestao(tipo)">Próxima questão</button>
                     </div>
                 </div>
 
@@ -346,7 +350,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
     <main class="avaliation-wrapper inativo">
         <div class="result-header-zone">
             <h1 class="main-title-display">Resultado da Avaliação</h1>
-            <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos da Estatística' e revise as questões com o gabarito detalhado.</p>
+            <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos da Trigonometria' e revise as questões com o gabarito detalhado.</p>
             
             <div class="lesson-metadata-row">
                 <div class="badge-metadata back">    

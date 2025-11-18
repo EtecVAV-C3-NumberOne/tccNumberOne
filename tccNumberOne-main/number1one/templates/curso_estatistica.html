@@ -1,3 +1,6 @@
+<script>
+    const tipo = 'est'
+</script>
 {% extends "curso_base.html" %}
 
 {% block curso_content %}
@@ -329,9 +332,9 @@ Além disso, a Estatística permite fazer previsões, identificar padrões e ver
                     </ul>
 
                     <div class="acoes-exercicio">
-                        <button class="botao botao-principal" onclick="repassarQuest()">Voltar questão</button>
+                        <button class="botao botao-principal" onclick="repassarQuest(tipo)">Voltar questão</button>
                         <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
-                        <button class="botao botao-principal" id="final" onclick="proximaQuestao()">Próxima questão</button>
+                        <button class="botao botao-principal" id="final" onclick="proximaQuestao(tipo)">Próxima questão</button>
                     </div>
                 </div>
 
