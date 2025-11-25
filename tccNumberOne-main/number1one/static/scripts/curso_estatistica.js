@@ -318,17 +318,7 @@ function constarEstatisticas(reposta, corretos, questoes) {
         document.querySelector('.outcome-status-text').innerHTML = "Parabéns! Você foi Aprovado!";
         document.querySelector('.outcome-description-text').innerHTML = "Você demonstrou um bom entendimento dos conceitos apresentados nesse módulo.";
         
-        // 🎯 MOSTRAR BOTÃO "PRÓXIMA AULA" (apenas se aprovado)
-        const nav = document.querySelector('.avaliation-wrapper .lesson-navigation');
-    if (nav) {
-        nav.innerHTML = `
-            <button class="nav-button primary" onclick="proxima()">
-                Próxima Aula ▶
-            </button>
-        `;
-    } else {
-        console.warn('⚠️ lesson-navigation não encontrada!');
-    }
+    
 
         // 🎯 SALVAR NO BANCO APENAS SE APROVADO
         if (aulaId) {
@@ -351,19 +341,7 @@ function constarEstatisticas(reposta, corretos, questoes) {
         document.querySelector('.outcome-status-text').innerHTML = "Você foi reprovado.";
         document.querySelector('.outcome-description-text').innerHTML = "Revise as aulas do módulo e volte para reavaliar suas competências, por enquanto, insuficientes.";
         document.querySelector('.results-showcase-card').classList.add('failed-status');
-        
-        // 🎯 MOSTRAR BOTÃO "TENTAR NOVAMENTE" (se reprovado)
-        const nav = document.querySelector('.avaliation-wrapper .lesson-navigation');
-    if (nav) {
-        nav.innerHTML = `
-            <button class="nav-button secondary" onclick="tentarNovamente(tipo)">
-                ↻ Tentar Novamente
-            </button>
-        `;
-    } else {
-        console.warn('⚠️ lesson-navigation não encontrada!');
-    }
-        // 🎯 NÃO SALVA NO BANCO SE REPROVADO
+
     }
 }
 
@@ -383,7 +361,7 @@ function gabarito(tipo) {
     }
     prova = document.querySelector('.corpo-conteudo');
     prova.classList.add('inativo');
-    const teudo = document.getElementById("aula-3");
+    const teudo = document.getElementById("aula-7");
     if (teudo) teudo.classList.add('inativo');
     const certos = document.querySelector('.avaliation-wrapper');
     certos.classList.remove('inativo');
