@@ -1,16 +1,16 @@
 <script>
-    const tipo = 'tri'
-    console.log(tipo)
+    const tipo = 'alg'
+
 </script>
 {% extends "curso_base.html" %}
 
 {% block curso_content %}
     <!-- Aula 1 (conteúdo normal) -->
-    <main id="aula-4" class="course-content {% if aula_atual != 4 %}inativo{% endif %}">
+    <main id="aula-8" class="course-content {% if aula_atual != 8 %}inativo{% endif %}">
         <div class="content-header">
-                <h1 class="content-title">Introdução à Trigonometria</h1>
+                <h1 class="content-title">Linguagem Algébrica</h1>
                 <p class="content-description">
-                    Aprenda os conceitos fundamentais da Trigonometria e suas devidas implicações.
+                    Aprenda os conceitos fundamentais acerca da linguagem usada na Álgebra.
                 </p>
                 <div class="lesson-meta">
                     <div class="meta-badge">
@@ -27,44 +27,57 @@
             <div class="content-body">
                 <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">1. 📌 O que é Trigonometria? </h2>
-                        <p class="content-text">
-                            A Trigonometria estuda as relações entre ângulos e lados de triângulos, além das funções trigonométricas, que são fundamentais para resolver problemas de geometria, física, engenharia e diversas áreas.
-Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas quanto em aplicações práticas, como movimento circular, ondas, altura de prédios, distâncias inacessíveis, entre outros.
-<br>
-                        </p>
-                        <h2 class="section-title">2. Razões Trigonométricas no Triângulo Retângulo </h2>
+                        <h2 class="section-title">1. 📌 Conceitos-chave </h2>
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Hipotenusa:</strong> lado oposto ao ângulo reto</li> 
-                            <li><strong>Cateto oposto:</strong> lado oposto ao ângulo considerado; </li> 
-                            <li><strong>Cateto adjacente:</strong> lado que forma o ângulo junto com a hipotenusa.</li> 
-                        </ul>
-                        <p class="content-text">
-                            Para um ângulo agudo α, definimos:
-                        </p>
-                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>seno (sen α):</strong> cateto oposto / hipotenusa;</li> 
-                            <li><strong>cosseno (cos α):</strong> cateto adjacente / hipotenusa; </li> 
-                            <li><strong>tangente (tan α):</strong> cateto oposto / cateto adjacente.</li> 
-                        </ul>
-                    </div>
+                            <li><strong>Variável</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Símbolo que pode assumir diferentes valores. É usada para representar algo que pode mudar ou que não conhecemos ainda.</li>
+                                <li>Exemplo: em um cálculo de preço por quantidade, x pode ser “número de itens”.</li>
+                            </ul>
 
-                    <div class="content-section">
-                        <h2 class="section-title">3. Relações Fundamentais </h2>
-                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li>sen² α + cos² α = 1</li> 
-                            <li>tan α = sen α / cos α</li> 
-                            <li>cot α = 1 / tan α</li> 
-                            <li>sec α = 1 / cos α</li> 
-                            <li>cossec α = 1 / sen α </li> 
+                            <li><strong>Incógnita</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>É a variável cujo valor queremos descobrir em um problema.
+Toda incógnita é uma variável, mas nem toda variável é incógnita.</li>
+                                    <li>Exemplo: Em 2x + 4 = 10, a incógnita é x.</li>
+                            </ul>
+
+                            <li><strong>Coeficiente</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Número que multiplica a variável. Ele mostra quanto daquela variável existe.</li>
+                                <li>Exemplo: em 5x, temos cinco vezes o valor representado por x.</li>
+                            </ul>
+
+                            <li><strong>Termo independente</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Número fixo na expressão, não depende da variável.</li>
+                                <li>Exemplo: em 3x − 7, o −7 é o termo independente.</li>
+                            </ul>
                         </ul>
-                    </div>
-                    <h2 class="section-title">4. Ângulo Notáveis </h2>
+
+                    <h2 class="section-title">2. Propriedades </h2>
+
+
                     <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                        <li><strong>30°:</strong> sin 1/2; cos √3/2; tan √3/3;</li> 
-                        <li><strong>45°:</strong> sin √2/2; cos √2/2; tan 1/2;</li> 
-                        <li><strong>60°:</strong> sin √3/2; cos 1/2; tan √3.</li> 
-                    </ul>
+                            <li><strong>Comutativa da adição/multiplicação</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>A ordem não altera o resultado, útil ao reorganizar expressões.</li>
+                                <li>Exemplo: a + b = b + a e a × b = b × a</li>
+                            </ul>
+
+                            <li><strong>Associativa da adição/multiplicação</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Mudar a posição dos parênteses não muda o valor.</li>
+                                    <li>Exemplo: (a + b) + c = a + (b + c)</li>
+                            </ul>
+
+                            <li><strong>Distributiva</strong></li>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Permite remover ou aplicar parênteses multiplicando cada termo.</li>
+                                <li>Exemplo: a(b + c) = ab + ac</li>
+                            </ul>
+
+                        </ul>
                 </div>
             </div>
             <div class="lesson-navigation">  
@@ -74,7 +87,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                 
                 
             <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
-            <input type="hidden" name="aula_id" value=1>
+            <input type="hidden" name="aula_id" value=8>
             {% if aula_atual not in concluidas %}
                 <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
             {% else %}
@@ -89,11 +102,11 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
     </main>
 
     <!-- Aula 2 (conteúdo normal) -->
-    <main id="aula-5" class="course-content {% if aula_atual != 5 %}inativo{% endif %}">
+    <main id="aula-9" class="course-content {% if aula_atual != 9 %}inativo{% endif %}">
         <div class="content-header">
-                <h1 class="content-title">Equação Trigonométrica</h1>
+                <h1 class="content-title">Equações do 1º Grau</h1>
                 <p class="content-description">
-                    Aprofundamento nos conceitos básicos de Trigonometria e sua aplicação prática em equações.
+                    Aprofundamento nos conceitos básicos de equação. 
                 </p>
                 <div class="lesson-meta">
                     <div class="meta-badge">
@@ -110,46 +123,71 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
             <div class="content-body">
                 <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">1. Resolução </h2>
-                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li><strong>Isolar</strong> a função trigonométrica;</li> 
-                            <li><strong>Identificar</strong> o valor que a função deve assumir;</li> 
-                            <li><strong>Achar os ângulos principais</strong> usando a relação inversa (arco seno, arco cosseno ou arco tangente);</li> 
-                            <li><strong>Considerar a periodicidade</strong> da função para encontrar todas as soluções;</li> 
-                            <li><strong>Ajustar</strong> o resultado para o domínio pedido (graus ou radianos).</li> 
-                        </ol>
-                    </div>
-                    <p style="margin-left: 2rem;"class="content-text">
-                        <strong>Exemplo 1:</strong>
-                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li>Resolver sen x = 1/2, com x em [0°, 360°];</li> 
-                            <li>sen x = 1/2 → ângulo principal: 30°;</li> 
-                            <li>No 1º quadrante: x = 30°;</li> 
-                            <li>No 2º quadrante: x = 150°;</li> 
-                            <li>Solução: x = 30°, 150°.</li> 
-                        </ol>
-                    </p>
+                        <h2 class="section-title">1. Conceito </h2>
+                            <p class="content-text">
+                                É chamado de equação do 1º grau quando há incógnita(s) com o expoente 1. Ambos lados da equação representam igualdade e resolvê-la significa descobrir o valor que torna a equalização possível. Exemplo da estrutura geral de uma equação abaixo.
+                            </p>
+                            <ul style="margin-left: 4rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li><strong>ax + b = c</strong></li>
+                            </ul>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li><strong>a</strong> = coeficiente da variável;</li>
+                                <li><strong>b</strong> = termo independente (fixo);</li>
+                                <li><strong>c</strong> = resultado que a expressão precisa alcançar.</li>
+                            </ul>
 
-                    <p style="margin-left: 2rem;"class="content-text">
-                        <strong>Exemplo 2:</strong>
-                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li>Resolver cos x = √3/2, com x em [0°, 360°];</li> 
-                            <li>Ângulo principal: 30°;</li> 
-                            <li>cos é positivo no 1º e 4º quadrantes: x = 30°, 330°;</li> 
-                        </ol>
-                    </p>
+                        <h2 class="section-title">2. Resolução </h2>
+                            <p class="content-text">
+                            Para resolver uma equação de 1º grau existem várias práticas comuns, sendo elas respectivamente:
+                            </p>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li><strong>Isolamento da variável</strong></li>
+                                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                        <li>Separar termos com variáveis e números.</li>
+                                    </ul>
+                                <li><strong>Inversão de operações</strong></li>
+                                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                        <li>Ao passar diferentes termos para o outro lado da igualdade, é obrigatório inverter suas respectivas operações. Exemplo: se um número está somando, do outro lado estará subtraindo, se está multiplicando, do outro lado está dividindo.</li>
+                                    </ul>
+                                <li><strong>Resolução</strong></li>
+                                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                        <li>Após realizar as devidas operações, o valor da incógnita condizente com a resolução da igualdade será descoberto.</li>
+                                    </ul>
+                            </ul>
 
-                    <p style="margin-left: 2rem;"class="content-text">
-                        <strong>Exemplo 3:</strong>
-                        <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-                            <li>Resolver tan x = 1, com x em [0°, 360°];</li> 
-                            <li>Ângulo principal: 45°;</li> 
-                            <li>tan é positiva no 1º e 3º quadrantes: x = 45°, 225°;</li> 
-                        </ol>
-                    </p>
-                    
-
-                
+                            <h2 class="section-title">3. Exemplos </h2>
+                            <p class="content-text">
+                                Exemplo 1.
+                            </p>
+                                <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li><strong>2x - 5 = 9</strong></li>
+                                    <li><strong>2x = 9 + 5</strong></li>
+                                    <li><strong>2x = 14</strong></li>
+                                    <li><strong>x = 14 / 2</strong></li>
+                                    <li><strong>x = 7</strong></li>
+                                </ol>
+                                <br>
+                                <p class="content-text">
+                                    Exemplo 2.
+                                </p>
+                                <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li><strong>3x + 12 = 0</strong></li>
+                                    <li><strong>3x = -12 + 0</strong></li>
+                                    <li><strong>3x = -12</strong></li>
+                                    <li><strong>x = -12 / 3</strong></li>
+                                    <li><strong>x = -4</strong></li>
+                                </ol>
+                                <br>
+                                <p class="content-text">
+                                    Exemplo 3.
+                                </p>
+                                <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li><strong>5x = 2x + 9</strong></li>
+                                    <li><strong>5x - 2x = 9</strong></li>
+                                    <li><strong>3x = 9</strong></li>
+                                    <li><strong>x = 9 / 3</strong></li>
+                                    <li><strong>x = 3</strong></li>
+                                </ol>
                 </div>
             </div>
             <div class="lesson-navigation">
@@ -172,11 +210,11 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
             </div>
 
     </main>
-    <main id="aula-6" class="course-content {% if aula_atual != 6 %}inativo{% endif %}">
+    <main id="aula-10" class="course-content {% if aula_atual != 10 %}inativo{% endif %}">
         <div class="content-header">
-                <h1 class="content-title">Identidades e Fórmulas Essenciais</h1>
+                <h1 class="content-title">Funções e Gráficos</h1>
                 <p class="content-description">
-                    Apresentação de elementos essenciais em questões trigonométricas.
+                    Apresentação de elementos essenciais da álgebra.
                 </p>
                 <div class="lesson-meta">
                     <div class="meta-badge">
@@ -193,36 +231,43 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
             <div class="content-body">
                 <div class="lesson-content">
                     <div class="content-section">
-                        <h2 class="section-title">1. Fórmulas </h2>
-
-                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
-
-                            <li><strong>Soma e diferença de arcos</strong></li> 
-                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
-                                    <li><strong>sen(a ± b)</strong> = sen x a x cos b ± cos x a x sen x b</li>
-                                    <li><strong>cos(a ± b) </strong> = cos x a x cos x b ∓ sen x a x sen b</li>
-                                    <li><strong>tan(a ± b) </strong> = (tan a ± tan b) / (1 ∓ tan a tan b)</li>
-                                </ul>
-
-                            <li><strong>Arco duplo</strong></li>
-                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
-                                    <li><strong>sen 2a</strong> = 2 x sen x a x cos x a</li>
-                                    <li><strong>cos 2a</strong> = cos² a - sen² a</li>
-                                    <li><strong>tan 2a</strong> = (2 tan a) / (1 - tan² a)</li>
-                                </ul>
-                            
-                            
-                            <li><strong>Lei dos senos</strong></li> 
-                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
-                                    <li>a / sen A = b / sen B = c / sen C</li>
-                                </ul>
-
-
-                            <li><strong>Lei dos cossenos</strong></li> 
-                                <ul style="margin-left: 3rem; margin-bottom: 2rem; color: #475569;">
-                                    <li>a² = b² + c² - 2bc x cos x A</li>
-                                </ul>
+                        <h2 class="section-title">1. Funções </h2>
+                        <p class="content-text">
+                            Funções são relações que conectam um número de entrada (x) a um número de saída (f(x)). Para cada entrada há uma saída, sendo parecido com o processo de uma máquina que recebe um produto inicial e devolve o produto final.
+                            <br>
+                            Função afim (mais comum).
+                        </p>
+                        <ul style="margin-left: 4rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li>f(x) = ax + b</li>
                         </ul>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>a</strong> = taxa de variação. Se for positiva, a função é crescente. Se for negativa, a função é decrescente;</li>
+                            <li><strong>b</strong> = valor inicial (lugar onde o eixo Y é interceptado).</li>
+                        </ul>
+
+                        <h2 class="section-title">2. Exemplos </h2>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                            <li><strong>f(x) = 2x + 1</strong></li>
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li> x = 0 → 1 / x = 3 → 7</li>
+                                    <li>Taxa de variação positiva, logo a função é uma reta crescente.</li>
+                                </ul>
+                            <li><strong>f(x) = -3x + 6</strong></li>
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li> x = 0 → 6 / x = 2 →0</li>
+                                    <li>Taxa de variação negativa, logo a função é uma reta decrescente.</li>
+                                </ul>
+                            <li><strong>f(x) = 5x</strong></li>
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li>Proporcionalidade direta, sem termo independente.</li>
+                                </ul>
+                            </ul>
+                                <h2 class="section-title">3. Aplicação prática </h2>
+                                <p class="content-text">
+                                    As aplicações reais da álgebra são vastas porque praticamente qualquer situação que envolva relação entre quantidades pode ser descrita por expressões, equações e funções. A ideia central é transformar problemas do cotidiano em estruturas simbólicas que permitem prever, comparar, otimizar e justificar decisões. Em economia pessoal, por exemplo, equações de primeiro grau aparecem naturalmente quando se calcula gastos fixos e variáveis: o valor de uma compra com taxa, o preço final após desconto, a diferença entre receitas e despesas. Cada um desses cenários se traduz em uma igualdade que expressa equilíbrio entre duas quantidades – e resolver essa igualdade significa compreender exatamente onde está o custo real, o lucro ou o prejuízo.
+                                </p>
+
+                        
                 </div>
             </div>
             <div class="lesson-navigation">
@@ -231,8 +276,8 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                 </button>
                 
             <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
-            <input type="hidden" name="aula_id" value=2>
-            {% if 2 not in concluidas %}
+            <input type="hidden" name="aula_id" value=10>
+            {% if 10 not in concluidas %}
                 <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
             {% else %}
                 <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
@@ -246,7 +291,8 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
 
     </main>
 
-    <main id="aula-7" class="course-content {% if aula_atual != 7 %}inativo{% endif %}" data-aula-id="7" data-proxima-aula="8">
+    <!-- Aula 3 (exercício - COM data attributes) -->
+    <main id="aula-11" class="course-content {% if aula_atual != 11 %}inativo{% endif %}" data-aula-id="11" data-proxima-aula="12">
         <div class="cabecalho-conteudo">
             <h1 class="titulo-conteudo">Exercícios</h1>
             <p class="descricao-conteudo">Prova acerca dos conteúdos do tópico 'Fundamentos'. Ao clicar em 'Continuar', seu acesso às aulas teóricas será restringido — sendo assim, se certifique que está pronto para a realização da avaliação.</p>
@@ -263,7 +309,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
         </div>
         <br><br>
         <center>
-        {% if 7 in concluidas %}
+        {% if 11 in concluidas %}
     <div class="aviso-concluido">
         <div style="background: #f0f9ff; padding: 2rem; border-radius: 12px; border: 2px solid #3b82f6; max-width: 500px;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
@@ -294,25 +340,25 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="pergunta-exercicio">
-                        <strong>Num triângulo retângulo, o ângulo agudo α possui: hipotenusa = 10cm, cateto oposto = 5cm. Qual é o valor de sin⁡ 𝛼?</strong><br><br>
+                        <strong>Em uma expressão algébrica, o termo 7x − 4, qual afirmativa descreve corretamente o coeficiente e o termo independente?</strong><br><br></strong>
                     </div>
 
                     <ul class="opcoes">
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">A</div>
-                            <span>0,3.</span>
+                            <span>O coeficiente é 4 e o termo independente é 7</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">B</div>
-                            <span>0,4.</span>
+                            <span>O coeficiente é −4 e o termo independente é 7</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">C</div>
-                            <span>0,5.</span>
+                            <span>O coeficiente é 7 e o termo independente é −4</span>
                         </li>
                         <li class="opcao" onclick="selecionarOpcao(this)">
                             <div class="letra-opcao">D</div>
-                            <span>0,6.</span>
+                            <span>O coeficiente é x e o termo independente é 3</span>
                         </li>
                     </ul>
 
@@ -394,25 +440,25 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="question-text-content">
-                        <strong>Num triângulo retângulo, o ângulo agudo α possui: hipotenusa = 10cm, cateto oposto = 5cm. Qual é o valor de sin⁡ 𝛼?</strong>
+                        <strong>Em uma expressão algébrica, o termo 7x − 4, qual afirmativa descreve corretamente o coeficiente e o termo independente?</strong>
                     </div>
 
                     <ul class="choices-list-container">
                         <li class="choice-item-row um">
                             <div class="choice-letter-circle">A</div>
-                            <span>0,3.</span>
+                            <span>O coeficiente é 4 e o termo independente é 7</span>
                         </li>
                         <li class="choice-item-row um ">
                             <div class="choice-letter-circle">B</div>
-                            <span>0,4.</span>
+                            <span>O coeficiente é −4 e o termo independente é 7</span>
                         </li>
                         <li class="choice-item-row um right-answer ">
                             <div class="choice-letter-circle">C</div>
-                            <span>0,5.</span>
+                            <span>O coeficiente é 7 e o termo independente é −4</span>
                         </li>
                         <li class="choice-item-row um">
                             <div class="choice-letter-circle">D</div>
-                            <span>0,6.</span>
+                            <span>O coeficiente é x e o termo independente é 3</span>
                         </li>
                     </ul>
                 </div>
@@ -426,25 +472,25 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="question-text-content">
-                        <strong>Resolva cos x = √3/2, com x em [0°, 360°].</strong>
+                        <strong>Resolva a equação: 5x − 12 = 3x + 8</strong>
                     </div>
 
                     <ul class="choices-list-container">
                         <li class="choice-item-row dois right-answer">
                             <div class="choice-letter-circle">A</div>
-                            <span>30° e 330°.</span>
+                            <span>x = 10</span>
                         </li>
                         <li class="choice-item-row dois">
                             <div class="choice-letter-circle">B</div>
-                            <span>60° e 300°.</span>
+                            <span>x = −10</span>
                         </li>
                         <li class="choice-item-row dois">
                             <div class="choice-letter-circle">C</div>
-                            <span>45° e 315°.</span>
+                            <span>x = 2</span>
                         </li>
                         <li class="choice-item-row dois">
                             <div class="choice-letter-circle">D</div>
-                            <span>120° e 240°.</span>
+                            <span>x = −2</span>
                         </li>
                     </ul>
                 </div>
@@ -458,25 +504,25 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="question-text-content">
-                        <strong>O valor de tan(60°) é:</strong>
+                        <strong>Dada a função f(x) = −2x + 6, qual interpretação está correta?</strong>
                     </div>
 
                     <ul class="choices-list-container">
                         <li class="choice-item-row tres">
                             <div class="choice-letter-circle">A</div>
-                            <span>√3/2.</span>
+                            <span>A função cresce 2 unidades a cada aumento de 1 em x</span>
                         </li>
                         <li class="choice-item-row tres right-answer">
                             <div class="choice-letter-circle">B</div>
-                            <span>√3.</span>
+                            <span>A função decresce 2 unidades a cada aumento de 1 em x</span>
                         </li>
                         <li class="choice-item-row tres">
                             <div class="choice-letter-circle">C</div>
-                            <span>√3/3.</span>
+                            <span>A função não possui inclinação, é constante</span>
                         </li>
                         <li class="choice-item-row tres">
                             <div class="choice-letter-circle">D</div>
-                            <span>1.</span>
+                            <span>A função cresce até x=6 e depois decresce</span>
                         </li>
                     </ul>
                 </div>
@@ -490,25 +536,25 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                     </div>
                     
                     <div class="question-text-content">
-                        <strong>Em um triângulo, os lados são: b = 8, c = 6, ângulo A = 60°. Calcule a usando a lei dos cossenos.</strong>
+                        <strong>Considere a função f(x) = 3x. Qual das opções melhor descreve o gráfico dessa função?</strong>
                     </div>
 
                     <ul class="choices-list-container">
                         <li class="choice-item-row quatro">
                             <div class="choice-letter-circle">A</div>
-                            <span>4.</span>
+                            <span>Uma reta decrescente que cruza o eixo y em 3</span>
                         </li>
                         <li class="choice-item-row quatro">
                             <div class="choice-letter-circle">B</div>
-                            <span>5.</span>
-                        </li>
-                        <li class="choice-item-row quatro">
-                            <div class="choice-letter-circle">C</div>
-                            <span>7.</span>
+                            <span>Uma parábola crescente com vértice na origem</span>
                         </li>
                         <li class="choice-item-row quatro right-answer">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Uma reta crescente que passa pela origem</span>
+                        </li>
+                        <li class="choice-item-row quatro ">
                             <div class="choice-letter-circle">D</div>
-                            <span>8.</span>
+                            <span>Uma linha horizontal com valor constante igual a 3</span>
                         </li>
                     </ul>
                 </div>

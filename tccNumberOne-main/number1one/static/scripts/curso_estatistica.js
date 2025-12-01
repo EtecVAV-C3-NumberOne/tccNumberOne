@@ -1,15 +1,14 @@
-// curso_estatistica.js - Funções específicas para o curso de Estatística
 
-// Variáveis específicas do exercício de Estatística
 let respostas = {};
 let correcaoEst = {1: 'B', 2: 'A', 3: 'B', 4: 'C'};
 let correcaoTri = {1: 'C', 2: 'A', 3: 'B', 4: 'D'};
+let correcaoAlg = {1: 'C', 2: 'A', 3: 'B', 4: 'C'};
 let questaoAtual = 1;
 let totalQuestoes = 4;
 let acertosAvaliacao = 0;
 let errosAvaliacao = 0;
 
-// Funções específicas do sistema de avaliação
+
 function selecionarOpcao(opcao) {
     document.querySelectorAll('.opcao').forEach(opt => opt.classList.remove('selecionada'));
     opcao.classList.add('selecionada');
@@ -64,6 +63,7 @@ function atualizarProgresso() {
 }
 
 function carregarProximaQuestao(tipo) {
+    console.log(tipo)
     const cartaoExercicio = document.querySelector('.cartao-exercicio');
     cartaoExercicio.style.opacity = '0.5';
     
@@ -82,7 +82,6 @@ function carregarProximaQuestao(tipo) {
             });
         }
         
-        // Conteúdo específico das questões de Estatística
         if (tipo=="est") {
             if (questaoAtual === 1) {
                 document.querySelector('.pergunta-exercicio').innerHTML = '<strong>O que é Estatística?</strong><br><br>';
@@ -247,6 +246,88 @@ function carregarProximaQuestao(tipo) {
                 proximo.innerHTML = "Finalizar";
             }   
         }
+        if (tipo=="alg"){
+            if (questaoAtual === 1) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Em uma expressão algébrica, o termo 7x − 4, qual afirmativa descreve corretamente o coeficiente e o termo independente?';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "O coeficiente é 4 e o termo independente é 7.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "O coeficiente é −4 e o termo independente é 7.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "O coeficiente é 7 e o termo independente é −4.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "O coeficiente é x e o termo independente é 3.";
+                    }
+                }
+            }
+            if (questaoAtual === 2) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Resolva a equação: 5x − 12 = 3x + 8</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "x = 10";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "x = −10";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "x = 2";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "x = −2";
+                    }
+                }
+            }
+            if (questaoAtual === 3) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Dada a função f(x) = −2x + 6, qual interpretação está correta?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "A função cresce 2 unidades a cada aumento de 1 em x";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "A função decresce 2 unidades a cada aumento de 1 em x";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "A função não possui inclinação, é constante";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "A função cresce até x=6 e depois decresce";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Próxima questão";
+            }
+            if (questaoAtual === 4) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Considere a função f(x) = 3x. Qual das opções melhor descreve o gráfico dessa função?</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Uma reta decrescente que cruza o eixo y em 3";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Uma parábola crescente com vértice na origem";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Uma reta crescente que passa pela origem";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Uma linha horizontal com valor constante igual a 3";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Finalizar";
+            }   
+        }
     }, 300);
 }
 
@@ -349,19 +430,23 @@ function gabarito(tipo) {
     voltarAoTopo();
     if (tipo =="est"){
         var correcao = correcaoEst;
+        var alio = 'aula-3'
     }
     else if (tipo=="tri"){
         var correcao = correcaoTri;
+        var alio = 'aula-7'
     }
     else if (tipo=='alg'){
         var correcao = correcaoAlg;
+        var alio = 'aula-11'
     }
     else if (tipo=='cal'){
         var correcao = correcaoCal;
+        var alio = 'aula-15'
     }
     prova = document.querySelector('.corpo-conteudo');
     prova.classList.add('inativo');
-    const teudo = document.getElementById("aula-7");
+    const teudo = document.getElementById(alio);
     if (teudo) teudo.classList.add('inativo');
     const certos = document.querySelector('.avaliation-wrapper');
     certos.classList.remove('inativo');
