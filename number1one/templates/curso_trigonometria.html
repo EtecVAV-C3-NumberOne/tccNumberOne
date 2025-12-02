@@ -74,7 +74,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                 
                 
             <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
-            <input type="hidden" name="aula_id" value=1>
+            <input type="hidden" name="aula_id" value=4>
             {% if aula_atual not in concluidas %}
                 <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
             {% else %}
@@ -158,7 +158,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                 </button>
                 
             <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
-            <input type="hidden" name="aula_id" value=2>
+            <input type="hidden" name="aula_id" value=5>
             {% if 2 not in concluidas %}
                 <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
             {% else %}
@@ -231,7 +231,7 @@ Nos vestibulares e no ENEM, a trigonometria aparece tanto em questões diretas q
                 </button>
                 
             <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
-            <input type="hidden" name="aula_id" value=2>
+            <input type="hidden" name="aula_id" value=6>
             {% if 2 not in concluidas %}
                 <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
             {% else %}

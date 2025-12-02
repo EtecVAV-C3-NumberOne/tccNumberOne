@@ -13,17 +13,12 @@
             
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link active">Meus Cursos</a></li>
-                <li><a href="#" class="nav-link">Explorar</a></li>
-                <li><a href="#" class="nav-link">Certificados</a></li>
-                <li><a href="#" class="nav-link">Comunidade</a></li>
+                
                 <li><a href="/logout" class="nav-link">Logout</a></li>
             </ul>
             
             <div class="user-section">
-                <div class="notifications tooltip" data-tooltip="Notificações">
-                    🔔
-                    <div class="notification-badge">3</div>
-                </div>
+                
                 <div class="user-avatar">{{ current_user.user_name[:2]|upper }}</div>
             </div>
         </nav>
@@ -38,20 +33,7 @@
                     <p>Continue sua jornada de aprendizado. Você está fazendo um ótimo progresso!</p>
                 </div>
                 
-                <div class="welcome-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Cursos Ativos</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">127</span>
-                        <span class="stat-label">Horas de Estudo</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15</span>
-                        <span class="stat-label">Dias Seguidos</span>
-                    </div>
-                </div>
+                
             </div>
         </section>
 
@@ -62,11 +44,7 @@
                 <section class="courses-section">
                     <div class="courses-header">
                         <h2 class="courses-title">Meus Cursos</h2>
-                        <div class="course-tabs">
-                            <button class="tab-button active" onclick="switchTab('all')">Todos</button>
-                            <button class="tab-button" onclick="switchTab('active')">Em Andamento</button>
-                            <button class="tab-button" onclick="switchTab('completed')">Concluídos</button>
-                        </div>
+                        
                     </div>
                     
                     <div class="courses-grid" id="coursesGrid">
@@ -178,67 +156,7 @@
                     </div>
                 </div>
 
-                <!-- Streak Calendar -->
-                <div class="streak-widget">
-                    <div class="streak-header">
-                        <h3 class="streak-title">
-                            🔥 Sequência de Estudos
-                        </h3>
-                        <div class="streak-counter">15 dias seguidos</div>
-                    </div>
-                    
-                    <div class="calendar-grid">
-                        <!-- Headers dos dias -->
-                        <div class="calendar-day header">D</div>
-                        <div class="calendar-day header">S</div>
-                        <div class="calendar-day header">T</div>
-                        <div class="calendar-day header">Q</div>
-                        <div class="calendar-day header">Q</div>
-                        <div class="calendar-day header">S</div>
-                        <div class="calendar-day header">S</div>
-                        
-                        <!-- Semana 1 -->
-                        <div class="calendar-day inactive">28</div>
-                        <div class="calendar-day inactive">29</div>
-                        <div class="calendar-day inactive">30</div>
-                        <div class="calendar-day inactive">31</div>
-                        <div class="calendar-day completed">1</div>
-                        <div class="calendar-day completed">2</div>
-                        <div class="calendar-day completed">3</div>
-                        
-                        <!-- Semana 2 -->
-                        <div class="calendar-day completed">4</div>
-                        <div class="calendar-day completed">5</div>
-                        <div class="calendar-day completed">6</div>
-                        <div class="calendar-day completed">7</div>
-                        <div class="calendar-day completed">8</div>
-                        <div class="calendar-day completed">9</div>
-                        <div class="calendar-day completed">10</div>
-                        
-                        <!-- Semana 3 -->
-                        <div class="calendar-day completed">11</div>
-                        <div class="calendar-day completed">12</div>
-                        <div class="calendar-day completed">13</div>
-                        <div class="calendar-day completed">14</div>
-                        <div class="calendar-day today">15</div>
-                        <div class="calendar-day active">16</div>
-                        <div class="calendar-day active">17</div>
-                    </div>
-                </div>
-
-                <!-- Continue Learning -->
-                <div class="continue-learning">
-                    <h3 class="continue-title">Continue de onde parou</h3>
-                    
-                    <div class="recent-lesson">
-                        <div class="lesson-title">Introdução às Equações</div>
-                        <div class="lesson-course">Álgebra Básica</div>
-                        <div class="lesson-progress">
-                            <div class="lesson-progress-fill" style="width: 70%"></div>
-                        </div>
-                        <button class="continue-button" onclick="continueCourse()">Continuar Estudando</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
