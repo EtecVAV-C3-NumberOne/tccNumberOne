@@ -3,6 +3,7 @@ let respostas = {};
 let correcaoEst = {1: 'B', 2: 'A', 3: 'B', 4: 'C'};
 let correcaoTri = {1: 'C', 2: 'A', 3: 'B', 4: 'D'};
 let correcaoAlg = {1: 'C', 2: 'A', 3: 'B', 4: 'C'};
+let correcaoCal = {1: 'C', 2: 'B', 3: 'C', 4: 'C'}
 let questaoAtual = 1;
 let totalQuestoes = 4;
 let acertosAvaliacao = 0;
@@ -328,6 +329,88 @@ function carregarProximaQuestao(tipo) {
                 proximo.innerHTML = "Finalizar";
             }   
         }
+        if (tipo=='cal'){
+            if (questaoAtual === 1) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>A integral surgiu historicamente da necessidade de resolver problemas físicos reais envolvendo movimento e variação contínua. Do ponto de vista conceitual rigoroso, a integral de uma função representa, fundamentalmente:';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "Um método puramente algébrico para inverter a derivada, sem relação direta com fenômenos físicos.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Um processo de soma aproximada de retângulos finitos, sem ligação com limites.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "O limite de uma soma de contribuições infinitamente pequenas que reconstrói uma quantidade total acumulada.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Uma forma alternativa de calcular taxas de crescimento sem uso da derivada.";
+                    }
+                }
+            }
+            if (questaoAtual === 2) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>Ao calcular uma integral indefinida, sempre aparece uma constante 𝐶 C. Do ponto de vista matemático profundo (e não apenas operacional), essa constante existe porque:<br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "A integral não é uma operação totalmente definida, pois depende do intervalo de integração.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "A derivada elimina informações sobre o valor absoluto da função, preservando apenas sua taxa de variação.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "Toda função possui infinitas derivadas possíveis.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "A derivada sempre anula constantes por convenção algébrica, sem significado conceitual.";
+                    }
+                }
+            }
+            if (questaoAtual === 3) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>A integral definida transforma uma função em um número real. Conceitualmente, esse número representa:</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "A soma de todos os valores pontuais da função entre dois extremos.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "A área geométrica pura entre a curva e o eixo, independentemente de sinais.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "O valor acumulado de uma grandeza cuja taxa de variação é dada pela função em um intervalo.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "Uma média aritmética ponderada dos valores da função no intervalo.";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Próxima questão";
+            }
+            if (questaoAtual === 4) {
+                document.querySelector('.pergunta-exercicio').innerHTML = '<strong>O Teorema Fundamental do Cálculo estabelece a conexão entre derivadas e integrais. Em termos conceituais, ele afirma que:</strong><br><br>';
+                const opcoes = document.querySelector('.opcoes');
+                const spans = opcoes.querySelectorAll('span');
+                for (let i = 0; i < spans.length; i++) {
+                    if (i==0){
+                        spans[i].innerHTML = "A integral é sempre o processo inverso direto da derivada, sem exceções.";
+                    }
+                    if (i==1){
+                        spans[i].innerHTML = "Toda função contínua possui uma primitiva elementar expressável por fórmulas simples.";
+                    }
+                    if (i==2){
+                        spans[i].innerHTML = "O cálculo de uma quantidade acumulada pode ser reduzido à avaliação de uma primitiva apenas nos extremos do intervalo.";
+                    }
+                    if (i==3){
+                        spans[i].innerHTML = "A derivada existe sempre que uma integral definida puder ser calculada.";
+                    }
+                }
+                const proximo = document.querySelector('button.botao-principal#final');
+                proximo.innerHTML = "Finalizar";
+            }   
+        }
     }, 300);
 }
 
@@ -442,7 +525,7 @@ function gabarito(tipo) {
     }
     else if (tipo=='cal'){
         var correcao = correcaoCal;
-        var alio = 'aula-15'
+        var alio = 'aula-14'
     }
     prova = document.querySelector('.corpo-conteudo');
     prova.classList.add('inativo');

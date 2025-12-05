@@ -1,0 +1,472 @@
+<script>
+    const tipo = 'cal'
+
+</script>
+{% extends "curso_base.html" %}
+
+{% block curso_content %}
+    <!-- Aula 1 (conteúdo normal) -->
+    <main id="aula-12" class="course-content {% if aula_atual != 12 %}inativo{% endif %}">
+        <div class="content-header">
+                <h1 class="content-title">Limites e Derivadas</h1>
+                <p class="content-description">
+                    Base lógica do Cálculo Diferencial.
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Avançado</span>
+                    </div>
+                </div>
+            </div>    
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. Limites </h2>
+
+
+                            <p class="content-text">
+                                O limite descreve o valor que uma função se aproxima quando a variável se aproxima de um número, mesmo que ela não atinja esse valor.
+                            </p>
+
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Exemplo</li>
+                            </ul>
+                            <p class="content-text">
+                                <p style="margin-left: 15rem;">
+                                    x→2 lim​(x2)=4 <br><br>
+                                </p>
+                                Porque quanto mais 𝑥  se aproxima de 2, mais 𝑥 ao quadrado se aproxima de 4.<br><br>
+                            </p>
+                            
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>Tipos de Limite</li>
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li>Finito</li>
+                                    <li>No infinito</li>
+                                    <li>Infinito</li>
+                                    <li>Laterais</li>
+                                </ul>
+                            </ul>
+                            <h2 class="section-title">2. Indeterminação e Descontinuidade </h2>
+                            <p class="content-text">
+                                A tentativa de cálculo do limite através da substituição direta que resulta em uma expressão em que o limite é indeterminado é chamada de <strong>indeterminação</strong>. Exemplo: zero dividido por zero, infinito dividido por infinito, zero vezes infinito, infinito menos infinito.
+                            </p>
+
+                            <p class="content-text">
+                                É de suma importância determinar a continuidade da função, o que é possível verificar através do cumprimento absoluto das seguintes condições (tendo em mente f(x)):
+
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li>f (a) existe</li>
+                                <li>lim x→a ​ f(x) existe</li>
+                                <li>lim⁡𝑥→𝑎𝑓(𝑥)=𝑓(𝑎)limx→a​f(x)=f(a)</li>
+                            </ul>
+                            
+                            Em caso de quebra de quaisquer das condições acima, evidencia-se a descontinuidade, ou seja, a quebra da identidade entre valor da função e comportamento do limite.
+
+                            </p>
+
+
+
+
+
+
+
+
+
+
+                    
+
+
+                    
+                </div>
+            </div>
+            <div class="lesson-navigation">  
+                <button class="nav-button secondary invisivel" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+                
+            <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
+            <input type="hidden" name="aula_id" value=12>
+            {% if aula_atual not in concluidas %}
+                <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
+            {% else %}
+                <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
+            {% endif %}
+            </form>
+                <button  class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+
+    </main>
+
+    <!-- Aula 2 (conteúdo normal) -->
+    <main id="aula-13" class="course-content {% if aula_atual != 13 %}inativo{% endif %}">
+        <div class="content-header">
+                <h1 class="content-title">Integrais</h1>
+                <p class="content-description">
+                    O movimento inverso da derivada e o cálculo de áreas, volume e trabalhho. 
+                </p>
+                <div class="lesson-meta">
+                    <div class="meta-badge">
+                        <span>📕</span>
+                        <span>Material didático</span>
+                    </div>
+                    
+                    <div class="meta-badge">
+                        <span>🎯</span>
+                        <span>Intermediário</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="lesson-content">
+                    <div class="content-section">
+                        <h2 class="section-title">1. Primitiva e Integral Indefinida </h2>
+                            <p class="content-text">
+                                <strong>Integral</strong> é a ferramenta matemática que mede quantidade total produzida por uma taxa variável. Esta nasce da necessidade física real de medir um todo formado por variações contínuas.
+                                <br><br>
+                                <strong>Integral indefinida</strong>: se derivar é medir taxa de variação, integrar é reconstruir a função a partir de sua taxa. Se uma função 𝐹 ( 𝑥 ) F(x) tem derivada igual a  f(x), então 𝐹 é chamada de primitiva de 𝑓 , e escreve-se: ∫f(x)dx=F(x)+C
+                            </p>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                <li><strong>Técnicas de Integração.</strong></li><br>
+                                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                    <li><strong>Substituição</strong></li>
+                                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                        <li>Quando uma função está “escondida dentro de outra”, troca-se a variável para simplificar a estrutura.</li>
+                                        <li>Usado sempre que há uma função composta ou quando a derivada da parte interna aparece multiplicando</li>
+                                    </ul>
+                                    <li><strong>Integração por partes</strong></li>
+                                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #475569;">
+                                        <li>Essa técnica é consequência direta da regra do produto da derivada.</li>
+                                        <li>Ela existe porque, enquanto a derivada do produto é simples, a integral do produto não é.</li>
+                                        <li>Ela é essencial para logaritmos e polinômioos multiplicando exponencias ou seno e cosseno.</li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                            
+
+                        <h2 class="section-title">2. Integral Definida </h2>
+                            <p class="content-text">Até agora, a integral produzia funções. Agora ela passa a produzir quantidades numéricas reais. A integral definida (∫ab​f(x)dx)</p> representa o valor acumulado de f no intervalo de a até b. Geometricamente, isso significa a área entre a cuva e o eixo com sinais positivos e negativos respeitados. Na física, isso representa o deslocamento a partir da velocidade, o trabalho a partir da força, a carga elétrica a partir da corrente e a massa a partir da densidade. <br><br>
+
+                            <h2 class="section-title">3. Teorema Fundamental do Cálculo </h2>
+                            <p class="content-text">
+                                Se F é uma primitiva de f, então: <strong>∫ab​f(x)dx=F(b)−F(a)</strong>. Desta forma, não é necessário somar infinitos pedaços manualmente, bastando encontrar uma função cuja derivada seja a original e avaliar os extremos.
+                            </p>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="nav-button secondary" onclick="diminuir(this)">
+                    ◀ Aula Anterior
+                </button>
+                
+            <form action="{{ url_for('concluir_aula') }}" method="post" style="display:inline;">
+            <input type="hidden" name="aula_id" value=13>
+            {% if 2 not in concluidas %}
+                <button type="submit" class="nav-button lesson-complete">✔ Marcar como concluída</button>
+            {% else %}
+                <button type="submit" class="nav-button lesson-complete terminou" >✔ Marcar como concluída</button>
+            {% endif %}
+            </form>
+                
+                <button class="nav-button primary" onclick="aumentar(this)">
+                    Próxima Aula ▶
+                </button>
+            </div>
+
+    </main>
+    
+
+    <!-- Aula 3 (exercício - COM data attributes) -->
+    <main id="aula-14" class="course-content {% if aula_atual != 14 %}inativo{% endif %}" data-aula-id="14" data-proxima-aula="14">
+        <div class="cabecalho-conteudo">
+            <h1 class="titulo-conteudo">Exercícios</h1>
+            <p class="descricao-conteudo">Prova acerca dos conteúdos do tópico 'Fundamentos'. Ao clicar em 'Continuar', seu acesso às aulas teóricas será restringido — sendo assim, se certifique que está pronto para a realização da avaliação.</p>
+            
+            <div class="metadados-aula">
+                <div class="emblema-meta avaliacao">
+                    📝 Avaliação
+                </div>
+                
+                <div class="emblema-meta intermediario">
+                    🎯 Avançado
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <center>
+        {% if 14 in concluidas %}
+    <div class="aviso-concluido">
+        <div style="background: #f0f9ff; padding: 2rem; border-radius: 12px; border: 2px solid #3b82f6; max-width: 500px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+            <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Avaliação Concluída</h3>
+            <p style="color: #475569; margin-bottom: 1.5rem;">Você já completou esta avaliação com sucesso!</p>
+        </div>
+    </div>
+{% else %}
+    <button class="botao-iniciar" onclick="ativarEx(this)">
+        Continuar
+    </button>
+{% endif %}
+        </center>
+        <div class="corpo-conteudo inativo">
+            <div class="secao-conteudo">
+                <div class="secao-progresso">
+                    <div class="titulo-progresso">Progresso da Avaliação</div>
+                    <div class="barra-progresso">
+                        <div class="preenchimento-progresso" style="width: 25%"></div>
+                    </div>
+                    <div class="texto-progresso">Questão 1 de 4</div>
+                </div>
+
+                <div class="cartao-exercicio">
+                    <div class="cabecalho-exercicio">
+                        <div class="numero-exercicio">1</div>
+                        <div class="tipo-exercicio">Múltipla Escolha</div>
+                    </div>
+                    
+                    <div class="pergunta-exercicio">
+                        <strong>A integral surgiu historicamente da necessidade de resolver problemas físicos reais envolvendo movimento e variação contínua. Do ponto de vista conceitual rigoroso, a integral de uma função representa, fundamentalmente:</strong><br><br></strong>
+                    </div>
+
+                    <ul class="opcoes">
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">A</div>
+                            <span>Um método puramente algébrico para inverter a derivada, sem relação direta com fenômenos físicos.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">B</div>
+                            <span>Um processo de soma aproximada de retângulos finitos, sem ligação com limites.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">C</div>
+                            <span>O limite de uma soma de contribuições infinitamente pequenas que reconstrói uma quantidade total acumulada.</span>
+                        </li>
+                        <li class="opcao" onclick="selecionarOpcao(this)">
+                            <div class="letra-opcao">D</div>
+                            <span>Uma forma alternativa de calcular taxas de crescimento sem uso da derivada.</span>
+                        </li>
+                    </ul>
+
+                    <div class="acoes-exercicio">
+                        <button class="botao botao-principal" onclick="repassarQuest(tipo)">Voltar questão</button>
+                        <button class="botao botao-contorno" onclick="limparSelecao()">Limpar Resposta</button>
+                        <button class="botao botao-principal" id="final" onclick="proximaQuestao(tipo)">Próxima questão</button>
+                    </div>
+                </div>
+
+                <div class="cartao-resumo">
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem;">Resumo da Avaliação</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Acompanhe seu progresso nesta avaliação</p>
+                    
+                    <div class="estatisticas-resumo">
+                        <div class="estatistica">
+                            <span class="numero-estatistica">1</span>
+                            <span class="rotulo-estatistica">Respondidas</span>
+                        </div>
+                        <div class="estatistica">
+                            <span class="numero-estatistica">3</span>
+                            <span class="rotulo-estatistica">Restantes</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Gabarito da Avaliação -->
+    <main class="avaliation-wrapper inativo">
+        <div class="result-header-zone">
+            <h1 class="main-title-display">Resultado da Avaliação</h1>
+            <p class="subtitle-description">Confira seu desempenho na avaliação sobre 'Fundamentos de Cálculo I' e revise as questões com o gabarito detalhado.</p>
+            
+            <div class="lesson-metadata-row">
+                <div class="badge-metadata back">    
+                </div>
+                <div class="badge-metadata feed">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-body-content">
+            <div class="content-section-block">
+                <div class="results-showcase-card">
+                    <div class="grade-display-large"></div>
+                    <div class="outcome-status-text"></div>
+                    <div class="outcome-description-text"></div>
+                </div>
+
+                <div class="stats-grid-container">
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big correct-answer"></span>
+                        <span class="metric-label-text">Acertos</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big wrong-answer"></span>
+                        <span class="metric-label-text">Erros</span>
+                    </div>
+                    <div class="metric-display-card">
+                        <span class="statistic-number-big porcentagi">75%</span>
+                        <span class="metric-label-text">Aproveitamento</span>
+                    </div>
+                    
+                </div>
+
+                <h2 class="section-heading-title">📝 Gabarito Detalhado</h2>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">1</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>A integral surgiu historicamente da necessidade de resolver problemas físicos reais envolvendo movimento e variação contínua. Do ponto de vista conceitual rigoroso, a integral de uma função representa, fundamentalmente:</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">A</div>
+                            <span>Um método puramente algébrico para inverter a derivada, sem relação direta com fenômenos físicos.</span>
+                        </li>
+                        <li class="choice-item-row um ">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Um processo de soma aproximada de retângulos finitos, sem ligação com limites.</span>
+                        </li>
+                        <li class="choice-item-row um right-answer ">
+                            <div class="choice-letter-circle">C</div>
+                            <span>O limite de uma soma de contribuições infinitamente pequenas que reconstrói uma quantidade total acumulada.</span>
+                        </li>
+                        <li class="choice-item-row um">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Uma forma alternativa de calcular taxas de crescimento sem uso da derivada.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">2</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>Ao calcular uma integral indefinida, sempre aparece uma constante 𝐶 C. Do ponto de vista matemático profundo (e não apenas operacional), essa constante existe porque:</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row dois ">
+                            <div class="choice-letter-circle">A</div>
+                            <span>A integral não é uma operação totalmente definida, pois depende do intervalo de integração.</span>
+                        </li>
+                        <li class="choice-item-row dois right-answer">
+                            <div class="choice-letter-circle">B</div>
+                            <span>A derivada elimina informações sobre o valor absoluto da função, preservando apenas sua taxa de variação.</span>
+                        </li>
+                        <li class="choice-item-row dois">
+                            <div class="choice-letter-circle">C</div>
+                            <span>Toda função possui infinitas derivadas possíveis.</span>
+                        </li>
+                        <li class="choice-item-row dois">
+                            <div class="choice-letter-circle">D</div>
+                            <span>A derivada sempre anula constantes por convenção algébrica, sem significado conceitual.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">3</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>A integral definida transforma uma função em um número real. Conceitualmente, esse número representa:</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row tres">
+                            <div class="choice-letter-circle">A</div>
+                            <span>A soma de todos os valores pontuais da função entre dois extremos.</span>
+                        </li>
+                        <li class="choice-item-row tres ">
+                            <div class="choice-letter-circle">B</div>
+                            <span>A área geométrica pura entre a curva e o eixo, independentemente de sinais.</span>
+                        </li>
+                        <li class="choice-item-row tres right-answer">
+                            <div class="choice-letter-circle">C</div>
+                            <span>O valor acumulado de uma grandeza cuja taxa de variação é dada pela função em um intervalo.</span>
+                        </li>
+                        <li class="choice-item-row tres">
+                            <div class="choice-letter-circle">D</div>
+                            <span>Uma média aritmética ponderada dos valores da função no intervalo.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="answer-key-item right-answer">
+                    <div class="question-header-area">
+                        <div class="question-number-circle right-answer">4</div>
+                        <div class="answer-status-indicator right-answer">
+                            Resposta Correta
+                        </div>
+                    </div>
+                    
+                    <div class="question-text-content">
+                        <strong>O Teorema Fundamental do Cálculo estabelece a conexão entre derivadas e integrais. Em termos conceituais, ele afirma que:</strong>
+                    </div>
+
+                    <ul class="choices-list-container">
+                        <li class="choice-item-row quatro">
+                            <div class="choice-letter-circle">A</div>
+                            <span>A integral é sempre o processo inverso direto da derivada, sem exceções.</span>
+                        </li>
+                        <li class="choice-item-row quatro">
+                            <div class="choice-letter-circle">B</div>
+                            <span>Toda função contínua possui uma primitiva elementar expressável por fórmulas simples.</span>
+                        </li>
+                        <li class="choice-item-row quatro right-answer">
+                            <div class="choice-letter-circle">C</div>
+                            <span>O cálculo de uma quantidade acumulada pode ser reduzido à avaliação de uma primitiva apenas nos extremos do intervalo.</span>
+                        </li>
+                        <li class="choice-item-row quatro ">
+                            <div class="choice-letter-circle">D</div>
+                            <span>A derivada existe sempre que uma integral definida puder ser calculada.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+    
+        <div class="lesson-navigation"></div>
+    </main>
+{% endblock %}
